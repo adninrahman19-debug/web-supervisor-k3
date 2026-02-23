@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Peraturan Konstruksi | Supervisor K3 Utama</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 6px; background: #e0e0e0; z-index: 1001; }
+        .progress-bar { height: 100%; background: #27AE60; width: 0%; box-shadow: 0 0 10px rgba(39, 174, 96, 0.5); }
+        
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-up { animation: fadeUp 0.8s ease-out forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        .article-wrapper { max-width: 900px; margin: 3rem auto; }
+        /* Tema Hijau Kepatuhan */
+        .article-header { background: linear-gradient(135deg, #1E8449, #27AE60); color: white; padding: 4rem 3rem; border-radius: 20px; text-align: center; margin-bottom: 3rem; box-shadow: 0 10px 20px rgba(39, 174, 96, 0.15); }
+        .article-header i { font-size: 4rem; color: #F1C40F; margin-bottom: 1rem; }
+        .article-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 800; }
+        
+        .article-content { background: white; padding: 4rem; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
+        .article-content h2 { color: #1E8449; font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 15px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+        .article-content h2 i { color: #27AE60; }
+        .article-content p, .article-content li { font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 1.5rem; }
+        
+        .callout-box { background: #EAFAF1; border-left: 6px solid #27AE60; padding: 2rem; border-radius: 8px; margin: 2rem 0; }
+        .callout-box h4 { color: #1E8449; font-size: 1.2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+        
+        .elemen-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .elemen-card { background: #f8f9fa; border: 1px solid #eee; padding: 2rem; border-radius: 12px; text-align: center; transition: all 0.3s; }
+        .elemen-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); background: white; border-color: #27AE60; }
+        .elemen-card i { font-size: 2.5rem; color: #27AE60; margin-bottom: 1rem; }
+        .elemen-card h4 { color: #1E8449; margin-bottom: 1rem; font-size: 1.15rem; }
+        .elemen-card p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0; }
+
+        .img-container { text-align: center; margin: 2.5rem 0; padding: 1.5rem; background: #fdfdfd; border: 1px dashed #ccc; border-radius: 12px; transition: transform 0.3s; }
+        .img-container:hover { transform: scale(1.02); border-color: #27AE60; }
+        .img-container img { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .img-container span { color: #888; font-style: italic; font-size: 0.95rem; display: block; margin-top: 10px; }
+
+        .finish-section { margin-top: 4rem; padding: 3rem; background: #EAFAF1; border-radius: 16px; text-align: center; border: 2px dashed #27AE60; }
+        .finish-section h3 { color: #1E8449; margin-bottom: 1rem; font-size: 1.5rem; }
+        .finish-section p { color: #555; margin-bottom: 2rem; }
+        
+        /* Tombol Hijau Khusus Peraturan */
+        .btn-green { background-color: #27AE60; color: white; }
+        .btn-green:hover { background-color: #1E8449; color: white; transform: scale(1.02); }
+    </style>
+</head>
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="readingProgressBar"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-helmet-safety"></i>
+                <span>Portal K3 Utama</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Kembali ke Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="article-wrapper">
+            
+            <div class="article-header animate-up">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <h1>Peraturan Perundang-Undangan Sektor Jasa Konstruksi</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Landasan Hukum, Kepatuhan, dan Sanksi dalam Proyek</p>
+            </div>
+
+            <article class="article-content animate-up delay-1">
+                
+                <h2><i class="fa-solid fa-book-bookmark"></i> 1. Undang-Undang Jasa Konstruksi</h2>
+                <p>Sebagai Supervisor K3 Utama, Anda tidak hanya bertugas melindungi nyawa, tetapi juga melindungi perusahaan dari tuntutan hukum. Landasan utama penyelenggaraan konstruksi di Indonesia adalah <strong>Undang-Undang Nomor 2 Tahun 2017 tentang Jasa Konstruksi</strong>.</p>
+                
+                <div class="img-container">
+                    
+                    <span>Ilustrasi: Kepatuhan Hukum dalam Penyelenggaraan Jasa Konstruksi</span>
+                </div>
+
+                <div class="callout-box">
+                    <h4><i class="fa-solid fa-triangle-exclamation"></i> Prinsip K4 (Pasal 59 UU No.2/2017)</h4>
+                    <p style="margin: 0; font-size: 1.05rem;">Undang-undang mewajibkan setiap penyelenggaraan jasa konstruksi harus memenuhi Standar Keamanan, Keselamatan, Kesehatan, dan Keberlanjutan <strong>(K4)</strong>. Jika standar ini diabaikan dan terjadi kecelakaan, maka ini bukan sekadar pelanggaran administratif, melainkan pelanggaran hukum pidana/perdata.</p>
+                </div>
+
+                <h2><i class="fa-solid fa-file-contract"></i> 2. Permen PUPR & Implementasi SMKK</h2>
+                <p>Undang-undang di atas dipertegas dengan peraturan teknis dari Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR), yang secara spesifik mengatur pedoman Sistem Manajemen Keselamatan Konstruksi (SMKK).</p>
+
+                <div class="elemen-grid">
+                    <div class="elemen-card">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <h4>Permen PUPR No. 10/2021</h4>
+                        <p>Pedoman baku penyelenggaraan SMKK yang wajib diikuti oleh Pengguna Jasa maupun Penyedia Jasa.</p>
+                    </div>
+                    <div class="elemen-card">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <h4>Biaya SMKK</h4>
+                        <p>Peraturan ini menegaskan bahwa Biaya Penerapan SMKK merupakan biaya tersendiri yang tidak boleh dikurangi batasannya (non-competitive).</p>
+                    </div>
+                    <div class="elemen-card">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h4>Ahli K3 Konstruksi</h4>
+                        <p>Mewajibkan adanya Petugas atau Ahli K3 Konstruksi yang bersertifikat resmi di setiap proyek.</p>
+                    </div>
+                </div>
+
+                <h2><i class="fa-solid fa-building-circle-xmark"></i> 3. Kegagalan Bangunan</h2>
+                <p>Ini adalah risiko hukum terbesar dalam dunia konstruksi. <strong>Kegagalan Bangunan</strong> adalah suatu keadaan keruntuhan bangunan dan/atau tidak berfungsinya bangunan setelah penyerahan akhir hasil pekerjaan (PHO/FHO).</p>
+                
+                <div class="img-container" style="background: transparent; border: none;">
+                    
+                    <span>Ilustrasi: Investigasi Keruntuhan/Kegagalan Struktur Bangunan</span>
+                </div>
+
+                <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                    <li><strong>Penilai Ahli:</strong> Jika terjadi keruntuhan, Menteri akan menunjuk Penilai Ahli independen untuk mencari penyebabnya.</li>
+                    <li><strong>Tanggung Jawab:</strong> Jika terbukti kegagalan disebabkan oleh kesalahan penyedia jasa (kontraktor), maka kontraktor wajib mengganti kerugian dan dapat dipidana. Umur pertanggungjawaban konstruksi umumnya diatur minimal 10 tahun.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-gavel"></i> 4. Sanksi Pelanggaran K3 Konstruksi</h2>
+                <p>Pemerintah sangat tegas terhadap pelanggaran K4. Sanksi bagi penyedia jasa yang mengabaikan keselamatan dapat berupa:</p>
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 1.5rem;">
+                    <div style="background: #fdfdfd; padding: 15px 20px; border-left: 4px solid #F1C40F; border-radius: 6px;">
+                        <strong>1. Peringatan Tertulis:</strong> Diberikan jika ditemukan ketidaksesuaian penerapan RKK di lapangan.
+                    </div>
+                    <div style="background: #fdfdfd; padding: 15px 20px; border-left: 4px solid #E67E22; border-radius: 6px;">
+                        <strong>2. Penghentian Sementara (Suspension):</strong> Proyek dihentikan paksa sampai perbaikan keselamatan dilakukan.
+                    </div>
+                    <div style="background: #fdfdfd; padding: 15px 20px; border-left: 4px solid #E74C3C; border-radius: 6px;">
+                        <strong>3. Pencabutan Izin & Blacklist:</strong> Sanksi terberat yang mencabut izin usaha (SBU) dan melarang perusahaan mengikuti tender proyek pemerintah.
+                    </div>
+                </div>
+
+            </article>
+
+            <div class="finish-section animate-up delay-3">
+                <i class="fa-solid fa-file-circle-check" style="font-size: 3rem; color: #27AE60; margin-bottom: 1rem;"></i>
+                <h3>Paham Aturan, Hindari Hukuman!</h3>
+                <p>Klik tombol di bawah ini untuk mencatat progres Anda dan membuka akses ujian terakhir: Peraturan Sektor Jasa Konstruksi.</p>
+                
+                <button class="btn btn-green btn" id="btn-selesai-baca" onclick="tandaiSelesai('peraturan')" style="padding: 15px 30px; font-size: 1.1rem; border-radius: 50px; border: none; font-weight: bold; cursor: pointer; box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);">
+                    <i class="fa-solid fa-unlock-keyhole"></i> Tandai Selesai & Buka Ujian Peraturan
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../assets/js/script.js"></script>
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("readingProgressBar").style.width = scrolled + "%";
+        };
+    </script>
+</body>
+</html>

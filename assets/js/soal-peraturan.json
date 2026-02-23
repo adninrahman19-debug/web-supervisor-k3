@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "pertanyaan": "Undang-Undang yang menjadi landasan utama penyelenggaraan jasa konstruksi di Indonesia saat ini adalah...",
+        "pilihan": [
+            "A. UU No. 1 Tahun 1970",
+            "B. UU No. 2 Tahun 2017",
+            "C. UU No. 13 Tahun 2003",
+            "D. UU No. 11 Tahun 2020"
+        ],
+        "jawaban_benar": "B",
+        "pembahasan": "Undang-Undang Nomor 2 Tahun 2017 tentang Jasa Konstruksi adalah payung hukum utama yang mengatur seluruh kegiatan konstruksi di Indonesia, menggantikan UU No. 18 Tahun 1999."
+    },
+    {
+        "id": 2,
+        "pertanyaan": "Berdasarkan Pasal 59 UU Jasa Konstruksi, setiap penyelenggaraan konstruksi wajib memenuhi standar K4. Apa kepanjangan dari K4?",
+        "pilihan": [
+            "A. Keamanan, Keselamatan, Kesehatan, dan Keberlanjutan",
+            "B. Kecepatan, Ketepatan, Kekuatan, dan Kerapian",
+            "C. Keselamatan, Kesehatan, Kesejahteraan, dan Keamanan",
+            "D. Kualitas, Kuantitas, Keselamatan, dan Keberhasilan"
+        ],
+        "jawaban_benar": "A",
+        "pembahasan": "K4 singkatan dari Standar Keamanan, Keselamatan, Kesehatan, dan Keberlanjutan. Ini adalah standar mutlak yang tidak boleh diabaikan dalam setiap proyek konstruksi."
+    },
+    {
+        "id": 3,
+        "pertanyaan": "Peraturan teknis dari Kementerian PUPR yang secara spesifik mengatur tentang Pedoman Sistem Manajemen Keselamatan Konstruksi (SMKK) adalah...",
+        "pilihan": [
+            "A. Permenaker No. 5 Tahun 1996",
+            "B. Permen PUPR No. 10 Tahun 2021",
+            "C. PP No. 50 Tahun 2012",
+            "D. Permenkes No. 11 Tahun 2017"
+        ],
+        "jawaban_benar": "B",
+        "pembahasan": "Permen PUPR No. 10 Tahun 2021 adalah pedoman terbaru dan paling komprehensif yang mewajibkan penerapan SMKK dan RKK pada proyek-proyek pekerjaan umum dan perumahan rakyat."
+    },
+    {
+        "id": 4,
+        "pertanyaan": "Dalam aturan pengadaan jasa konstruksi, bagaimana sifat dari 'Biaya Penerapan SMKK' dalam Rencana Anggaran Biaya (RAB)?",
+        "pilihan": [
+            "A. Bisa dihapus jika dana proyek kurang",
+            "B. Merupakan biaya yang bisa ditawar agar proyek lebih murah (Competitive)",
+            "C. Merupakan biaya tersendiri yang tidak boleh dikurangi/ditawar (Non-Competitive)",
+            "D. Dibebankan kepada gaji pekerja secara potong gaji"
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "Biaya SMKK bersifat Non-Competitive (tidak boleh diutak-atik atau dikurangi nilainya saat proses tender/penawaran) demi memastikan keselamatan pekerja tidak dikorbankan demi harga murah."
+    },
+    {
+        "id": 5,
+        "pertanyaan": "Suatu keadaan keruntuhan bangunan dan/atau tidak berfungsinya bangunan setelah penyerahan akhir hasil pekerjaan (FHO) secara hukum disebut...",
+        "pilihan": [
+            "A. Kecelakaan Kerja",
+            "B. Force Majeure",
+            "C. Kegagalan Bangunan",
+            "D. Cacat Mutu"
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "Kegagalan Bangunan adalah istilah hukum untuk keruntuhan atau tidak berfungsinya bangunan setelah diserahterimakan, yang mana kontraktor dan perencana bisa dimintai pertanggungjawaban."
+    },
+    {
+        "id": 6,
+        "pertanyaan": "Jika terjadi Kegagalan Bangunan, siapa pihak independen yang berwenang menetapkan penyebab kegagalan tersebut?",
+        "pilihan": [
+            "A. Polisi Lalu Lintas",
+            "B. Mandor Proyek",
+            "C. Penilai Ahli yang ditunjuk oleh Menteri",
+            "D. Kepala Desa setempat"
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "Menteri PUPR berwenang menunjuk Penilai Ahli (Expert Assessor) independen untuk melakukan investigasi dan menentukan siapa yang bersalah atas keruntuhan bangunan tersebut."
+    },
+    {
+        "id": 7,
+        "pertanyaan": "Berdasarkan UU Jasa Konstruksi, berapa tahun minimal umur pertanggungjawaban penyedia jasa terhadap Kegagalan Bangunan (kecuali umur rencana bangunan kurang dari itu)?",
+        "pilihan": [
+            "A. 1 Tahun",
+            "B. 5 Tahun",
+            "C. 10 Tahun",
+            "D. 20 Tahun"
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "Penyedia jasa wajib bertanggung jawab atas Kegagalan Bangunan dalam jangka waktu paling lama 10 (sepuluh) tahun sejak penyerahan akhir hasil pekerjaan."
+    },
+    {
+        "id": 8,
+        "pertanyaan": "Manakah di bawah ini yang merupakan sanksi administratif paling berat bagi perusahaan (Penyedia Jasa) yang melanggar ketentuan K4?",
+        "pilihan": [
+            "A. Peringatan tertulis",
+            "B. Penghentian sementara pekerjaan (Suspension)",
+            "C. Denda administratif",
+            "D. Pencabutan izin usaha dan pencantuman dalam Daftar Hitam (Blacklist)"
+        ],
+        "jawaban_benar": "D",
+        "pembahasan": "Pencabutan Izin Usaha dan Daftar Hitam (Blacklist) adalah sanksi pamungkas yang membuat perusahaan tersebut mati secara perdata karena tidak bisa lagi mengikuti tender konstruksi."
+    },
+    {
+        "id": 9,
+        "pertanyaan": "Apa syarat mutlak bagi personel yang ditugaskan untuk mengawasi dan menjamin K3 di lapangan konstruksi sesuai perundang-undangan?",
+        "pilihan": [
+            "A. Harus memiliki gelar S2 Teknik Sipil",
+            "B. Harus memiliki Sertifikat Kompetensi Kerja (Ahli K3 Konstruksi / Petugas Keselamatan Konstruksi)",
+            "C. Harus sudah bekerja minimal 20 tahun",
+            "D. Harus memiliki hubungan keluarga dengan direktur"
+        ],
+        "jawaban_benar": "B",
+        "pembahasan": "Undang-undang mewajibkan setiap tenaga kerja yang memiliki peran strategis di bidang K3 harus memiliki Sertifikat Kompetensi Kerja (SKK) yang diterbitkan oleh lembaga resmi."
+    },
+    {
+        "id": 10,
+        "pertanyaan": "Jika kelalaian kontraktor dalam menerapkan SMKK menyebabkan kecelakaan fatal yang merenggut nyawa pekerja atau masyarakat, selain sanksi administratif, sanksi apa lagi yang menanti?",
+        "pilihan": [
+            "A. Sanksi Pidana sesuai KUHP",
+            "B. Disuruh mengulang proyek dari awal",
+            "C. Diberi peringatan lisan oleh mandor",
+            "D. Tidak ada sanksi lain"
+        ],
+        "jawaban_benar": "A",
+        "pembahasan": "Selain sanksi administratif dari UU Jasa Konstruksi, kecelakaan fatal akibat kelalaian (Kealpaan) yang menyebabkan hilangnya nyawa akan diproses secara hukum Pidana menggunakan KUHP (misal: Pasal 359 KUHP)."
+    }
+]

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi SMKK | Supervisor K3 Utama</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        /* Progress Bar Membaca */
+        .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 6px; background: #e0e0e0; z-index: 1001; }
+        .progress-bar { height: 100%; background: var(--accent-yellow); width: 0%; box-shadow: 0 0 10px rgba(241, 196, 15, 0.5); }
+        
+        /* Animasi Muncul Halus */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-up { animation: fadeUp 0.8s ease-out forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* Struktur Artikel */
+        .article-wrapper { max-width: 900px; margin: 3rem auto; }
+        .article-header { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); color: white; padding: 4rem 3rem; border-radius: 20px; text-align: center; margin-bottom: 3rem; box-shadow: 0 10px 20px rgba(10, 61, 98, 0.15); }
+        .article-header i { font-size: 4rem; color: var(--accent-yellow); margin-bottom: 1rem; }
+        .article-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 800; }
+        
+        /* Konten Artikel */
+        .article-content { background: white; padding: 4rem; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
+        .article-content h2 { color: var(--primary-blue); font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 15px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+        .article-content h2 i { color: var(--secondary-blue); }
+        .article-content p { font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 1.5rem; }
+        
+        /* Kotak Sorotan (Callout) */
+        .callout-box { background: #FEF9E7; border-left: 6px solid var(--accent-yellow); padding: 2rem; border-radius: 8px; margin: 2rem 0; }
+        .callout-box h4 { color: #D4AC0D; font-size: 1.2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+        
+        /* Grid Elemen SMKK */
+        .elemen-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .elemen-card { background: #f8f9fa; border: 1px solid #eee; padding: 2rem; border-radius: 12px; text-align: center; transition: all 0.3s; }
+        .elemen-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); background: white; border-color: var(--secondary-blue); }
+        .elemen-card i { font-size: 2.5rem; color: var(--secondary-blue); margin-bottom: 1rem; }
+        .elemen-card h4 { color: var(--primary-blue); margin-bottom: 1rem; }
+        .elemen-card p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0; }
+
+        /* Wadah Gambar yang Rapi */
+        .img-container { text-align: center; margin: 2.5rem 0; padding: 1.5rem; background: #fdfdfd; border: 1px dashed #ccc; border-radius: 12px; transition: transform 0.3s; }
+        .img-container:hover { transform: scale(1.02); border-color: var(--secondary-blue); }
+        .img-container img { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .img-container span { color: #888; font-style: italic; font-size: 0.95rem; display: block; margin-top: 10px; }
+
+        /* Area Penyelesaian */
+        .finish-section { margin-top: 4rem; padding: 3rem; background: #f0f8ff; border-radius: 16px; text-align: center; border: 2px dashed var(--secondary-blue); }
+        .finish-section h3 { color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.5rem; }
+        .finish-section p { color: #555; margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="readingProgressBar"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-helmet-safety"></i>
+                <span>Portal K3 Utama</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Kembali ke Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="article-wrapper">
+            
+            <div class="article-header animate-up">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h1>Sistem Manajemen Keselamatan Konstruksi (SMKK)</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Modul Lengkap: Keselamatan, Mutu, dan Lingkungan</p>
+            </div>
+
+            <article class="article-content animate-up delay-1">
+                
+                <h2><i class="fa-solid fa-book-open"></i> 1. Pengantar SMKK</h2>
+                <p><strong>Sistem Manajemen Keselamatan Konstruksi (SMKK)</strong> adalah bagian dari sistem manajemen pelaksanaan pekerjaan konstruksi dalam rangka menjamin perwujudan Keselamatan Konstruksi. Hal ini bukan sekadar pelengkap, melainkan kewajiban mutlak yang diatur oleh regulasi.</p>
+                <p>Tujuan utamanya adalah menjamin <strong>K4</strong>, yaitu pemenuhan standar <strong>Keamanan, Keselamatan, Kesehatan, dan Keberlanjutan</strong> pada setiap tahapan proyek.</p>
+
+                <div class="img-container">
+                    
+
+[Image of construction safety management system]
+
+                    <span>Ilustrasi: Penerapan Sistem Keselamatan di Lingkungan Proyek Konstruksi</span>
+                </div>
+
+                <div class="callout-box">
+                    <h4><i class="fa-solid fa-lightbulb"></i> Peran Supervisor K3 Utama</h4>
+                    <p style="margin: 0; font-size: 1.05rem;">Sebagai Supervisor K3 Utama, Anda adalah ujung tombak di lapangan. Anda bertanggung jawab untuk memastikan dokumen <strong>Rencana Keselamatan Konstruksi (RKK)</strong> benar-benar diaplikasikan oleh seluruh pekerja dan manajemen operasional harian.</p>
+                </div>
+
+                <h2><i class="fa-solid fa-layer-group"></i> 2. Lima Elemen Utama SMKK</h2>
+                <p>Penerapan SMKK diukur dan dijalankan melalui 5 (lima) elemen inti yang saling berkesinambungan, yang sering kali mengadaptasi siklus PDCA (Plan, Do, Check, Act).</p>
+
+                <div class="img-container" style="background: transparent; border: none;">
+                    
+
+[Image of PDCA Plan Do Check Act cycle diagram]
+
+                    <span>Ilustrasi: Siklus Perbaikan Berkelanjutan (Continuous Improvement)</span>
+                </div>
+
+                <div class="elemen-grid">
+                    <div class="elemen-card">
+                        <i class="fa-solid fa-users-gear"></i>
+                        <h4>1. Kepemimpinan</h4>
+                        <p>Komitmen manajemen puncak dan pelibatan aktif pekerja.</p>
+                    </div>
+                    <div class="elemen-card">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                        <h4>2. Perencanaan</h4>
+                        <p>Penyusunan RKK, Identifikasi Bahaya, dan Penilaian Risiko.</p>
+                    </div>
+                    <div class="elemen-card">
+                        <i class="fa-solid fa-hand-holding-hand"></i>
+                        <h4>3. Dukungan</h4>
+                        <p>Penyediaan anggaran, alat, dan pelatihan kompetensi pekerja.</p>
+                    </div>
+                    <div class="elemen-card">
+                        <i class="fa-solid fa-helmet-safety"></i>
+                        <h4>4. Operasi</h4>
+                        <p>Pengendalian pelaksanaan di lapangan dan tanggap darurat.</p>
+                    </div>
+                    <div class="elemen-card">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        <h4>5. Evaluasi Kinerja</h4>
+                        <p>Pemantauan, inspeksi rutin, dan audit K3.</p>
+                    </div>
+                </div>
+
+                <h2><i class="fa-solid fa-gem"></i> 3. Manajemen Mutu Pekerjaan</h2>
+                <p>Dalam SMKK, keselamatan berbanding lurus dengan mutu (kualitas). Kegagalan struktural sering kali berawal dari kelalaian dalam menjaga standar mutu material.</p>
+                
+                <div class="img-container">
+                    
+                    <span>Ilustrasi: Proses Inspeksi dan Pengujian Mutu Material Konstruksi</span>
+                </div>
+                
+                <ul style="margin-left: 2rem; margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">
+                    <li><strong>Pemeriksaan Material:</strong> Memastikan besi tulangan, kualitas beton, dan alat berat sesuai dengan spesifikasi teknis.</li>
+                    <li><strong>Mencegah Kegagalan Bangunan:</strong> Bangunan yang runtuh akibat material buruk adalah kecelakaan kerja fatal.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-leaf"></i> 4. Pengelolaan Lingkungan Konstruksi</h2>
+                <p>Proyek konstruksi yang baik adalah proyek yang meminimalkan dampak negatif terhadap lingkungan di sekitarnya.</p>
+                
+                <div class="img-container">
+                    
+                    <span>Ilustrasi: Praktik Pengelolaan Lingkungan dan Limbah Proyek yang Baik</span>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 1.5rem;">
+                    <div style="background: #fdfdfd; padding: 15px 20px; border-left: 4px solid var(--success); border-radius: 6px;">
+                        <strong><i class="fa-solid fa-biohazard" style="color: var(--danger); width: 25px;"></i> Limbah B3</strong><br>
+                        Penanganan oli bekas, sisa cat, dan bahan kimia agar tidak mencemari tanah.
+                    </div>
+                    <div style="background: #fdfdfd; padding: 15px 20px; border-left: 4px solid var(--success); border-radius: 6px;">
+                        <strong><i class="fa-solid fa-smog" style="color: #7f8c8d; width: 25px;"></i> Udara & Debu</strong><br>
+                        Penyiraman jalan akses proyek dan penutupan material galian.
+                    </div>
+                    <div style="background: #fdfdfd; padding: 15px 20px; border-left: 4px solid var(--success); border-radius: 6px;">
+                        <strong><i class="fa-solid fa-ear-deaf" style="color: var(--primary-blue); width: 25px;"></i> Kebisingan</strong><br>
+                        Mengatur jam kerja alat berat agar tidak mengganggu istirahat masyarakat sekitar.
+                    </div>
+                </div>
+
+            </article>
+
+            <div class="finish-section animate-up delay-3">
+                <i class="fa-solid fa-flag-checkered" style="font-size: 3rem; color: var(--secondary-blue); margin-bottom: 1rem;"></i>
+                <h3>Selamat! Anda telah menyelesaikan Modul SMKK</h3>
+                <p>Pastikan Anda telah memahami seluruh elemen, manajemen mutu, dan pengelolaan lingkungan di atas sebelum melanjutkan ke tahap pengujian.</p>
+                
+                <button class="btn btn-primary" id="btn-selesai-baca" onclick="tandaiSelesai('smkk')" style="padding: 15px 30px; font-size: 1.1rem; border-radius: 50px; box-shadow: 0 5px 15px rgba(10, 61, 98, 0.3);">
+                    <i class="fa-solid fa-unlock-keyhole"></i> Tandai Selesai & Buka Ujian SMKK
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../assets/js/script.js"></script>
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("readingProgressBar").style.width = scrolled + "%";
+        };
+    </script>
+</body>
+</html>

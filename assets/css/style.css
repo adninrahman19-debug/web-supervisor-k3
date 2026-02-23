@@ -1,0 +1,224 @@
+/* =========================================
+   1. RESET & VARIABEL DASAR
+   ========================================= */
+:root {
+    --primary-blue: #0A3D62;    
+    --secondary-blue: #2980B9;  
+    --accent-yellow: #F1C40F;   
+    --text-dark: #2C3E50;       
+    --text-muted: #7F8C8D;      
+    --bg-light: #F4F7F6;        
+    --white: #FFFFFF;
+    --danger: #E74C3C;          
+    --success: #27AE60;         
+    --disabled-bg: #E0E0E0;
+    --disabled-text: #9E9E9E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i { color: var(--accent-yellow); }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--secondary-blue);
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+.hero {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 2rem;
+    box-shadow: inset 0 -5px 15px rgba(0,0,0,0.1);
+}
+
+.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; opacity: 0.9; }
+
+/* =========================================
+   4. KONTEN UTAMA & GRID KARTU
+   ========================================= */
+.container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+.section-header { text-align: center; margin-bottom: 3rem; }
+.section-header h2 { color: var(--primary-blue); font-size: 2rem; }
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* =========================================
+   5. DESAIN KARTU TOPIK
+   ========================================= */
+.topic-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.topic-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.blue-icon { background-color: #EBF5FB; color: #2980B9; }
+.yellow-icon { background-color: #FEF9E7; color: #F39C12; }
+.green-icon { background-color: #EAFAF1; color: #27AE60; }
+
+.topic-card h3 { font-size: 1.25rem; color: var(--primary-blue); margin-bottom: 0.5rem; }
+.topic-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; }
+
+/* =========================================
+   6. TOMBOL (BUTTONS)
+   ========================================= */
+.card-actions { display: flex; flex-direction: column; gap: 10px; }
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn i { margin-right: 5px; }
+
+.btn-primary { background-color: var(--primary-blue); color: var(--white); }
+.btn-primary:hover { background-color: var(--secondary-blue); transform: scale(1.02); }
+
+.btn-danger { background-color: var(--danger); color: var(--white); }
+.btn-danger:hover { background-color: #C0392B; transform: scale(1.02); }
+
+.btn-disabled { background-color: var(--disabled-bg); color: var(--disabled-text); cursor: not-allowed; }
+
+/* Tombol kecil untuk tabel */
+.btn-sm { padding: 6px 10px; font-size: 0.85rem; }
+
+/* =========================================
+   7. TABEL RIWAYAT UJIAN (FITUR BARU)
+   ========================================= */
+.history-container {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px; /* Mencegah tabel terlalu sempit di layar kecil */
+}
+
+.history-table th, .history-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.history-table th {
+    background-color: #F8F9F9;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.history-table tbody tr:hover {
+    background-color: #F4F7F6;
+}
+
+/* Badge untuk status kelulusan */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge-success { background-color: #E8F8F5; color: var(--success); }
+.badge-danger { background-color: #FDEDEC; color: var(--danger); }
+
+/* =========================================
+   8. RESPONSIF
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .nav-container { flex-direction: column; gap: 15px; }
+    .hero h1 { font-size: 2rem; }
+    .history-container { padding: 1rem; }
+}

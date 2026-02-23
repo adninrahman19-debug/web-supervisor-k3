@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Kompetensi Peraturan | Supervisor K3 Utama</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        /* Animasi Transisi Halus */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated-box { animation: fadeIn 0.6s ease-out forwards; }
+        
+        /* Desain Kotak Ujian */
+        .exam-container { 
+            max-width: 850px; 
+            margin: 2rem auto; 
+            background: var(--white); 
+            padding: 3rem; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+        }
+        
+        /* Header Pre-Exam */
+        .pre-exam-header { text-align: center; margin-bottom: 2rem; }
+        .icon-large { font-size: 4rem; color: #27AE60; margin-bottom: 1rem; } 
+        
+        /* Input Form */
+        .form-group { margin-bottom: 2rem; }
+        .form-group label { display: block; margin-bottom: 0.8rem; font-weight: 600; color: var(--primary-blue); font-size: 1.1rem; }
+        .input-with-icon { position: relative; }
+        .input-with-icon i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 1.2rem; }
+        .input-with-icon input { width: 100%; padding: 15px 15px 15px 45px; border: 2px solid #eee; border-radius: 8px; font-size: 1.1rem; font-family: 'Poppins', sans-serif; transition: border-color 0.3s; }
+        .input-with-icon input:focus { outline: none; border-color: #27AE60; }
+        
+        /* Box Instruksi */
+        .eval-box { background: #EAFAF1; border-left: 5px solid #27AE60; padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px; }
+        .eval-box h4 { color: #1E8449; margin-bottom: 0.8rem; font-size: 1.2rem; }
+        .eval-box ul { margin-left: 1.5rem; line-height: 1.8; color: #555; }
+        
+        /* Desain Ruang Ujian */
+        .exam-header-bar { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px dashed #ddd; padding-bottom: 1.5rem; margin-bottom: 2rem; }
+        .timer-box { background: #27AE60; color: var(--white); padding: 10px 25px; border-radius: 30px; font-weight: bold; font-size: 1.3rem; box-shadow: 0 4px 10px rgba(39, 174, 96, 0.2); transition: all 0.3s; }
+        .timer-danger { background: var(--danger); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); animation: pulse 1s infinite; }
+        
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        
+        /* Kotak Soal */
+        .question-box { margin-bottom: 2.5rem; padding: 1.5rem; background: #fafafa; border-radius: 12px; border-left: 4px solid #27AE60; transition: all 0.3s; }
+        .question-box:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.05); background: var(--white); transform: translateY(-3px); }
+        .question-box h4 { margin-bottom: 1.5rem; color: var(--text-dark); font-size: 1.15rem; line-height: 1.6; }
+        
+        /* Pilihan Jawaban */
+        .option-label { display: flex; align-items: center; margin-bottom: 0.8rem; cursor: pointer; padding: 12px 15px; border: 2px solid #eee; border-radius: 8px; transition: all 0.2s; background: var(--white); }
+        .option-label:hover { border-color: #27AE60; background: #EAFAF1; }
+        .option-label input { margin-right: 15px; transform: scale(1.2); cursor: pointer; }
+        
+        /* Hasil Ujian */
+        .result-card { text-align: center; padding: 2rem; border-radius: 16px; margin-bottom: 2rem; }
+        .result-success { background: #E8F8F5; border: 2px solid var(--success); }
+        .result-danger { background: #FDEDEC; border: 2px solid var(--danger); }
+        .score-display { font-size: 4.5rem; font-weight: 800; line-height: 1; margin: 1rem 0; }
+        
+        /* Pembahasan */
+        .review-box { background: var(--white); border: 1px solid #ddd; padding: 1.5rem; margin-top: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .review-box h5 { color: #27AE60; font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+        
+        .btn-green { background-color: #27AE60; color: white; border: none; cursor: pointer; transition: all 0.3s; }
+        .btn-green:hover { background-color: #1E8449; transform: scale(1.02); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-helmet-safety"></i>
+                <span>Portal K3 Utama</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Kembali ke Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div id="pre-exam-section" class="exam-container animated-box">
+            <div class="pre-exam-header">
+                <i class="fa-solid fa-scale-balanced icon-large"></i>
+                <h2 style="color: var(--primary-blue);">Uji Kompetensi: Peraturan Konstruksi</h2>
+                <p style="color: var(--text-muted);">Kepatuhan Hukum & Standar K4</p>
+            </div>
+            
+            <div class="eval-box">
+                <h4><i class="fa-solid fa-circle-info"></i> Panduan & Instruksi:</h4>
+                <ul>
+                    <li>Materi mencakup UU No. 2 Tahun 2017 & Permen PUPR No. 10/2021.</li>
+                    <li>Terdapat <strong>10 soal</strong> pilihan ganda.</li>
+                    <li>Waktu pengerjaan adalah <strong>15 Menit</strong> secara otomatis.</li>
+                    <li>Hasil ujian akan disimpan secara permanen di riwayat Anda.</li>
+                </ul>
+            </div>
+            
+            <div class="form-group">
+                <label for="namaPeserta">Masukkan Nama Lengkap Anda:</label>
+                <div class="input-with-icon">
+                    <i class="fa-solid fa-user-pen"></i>
+                    <input type="text" id="namaPeserta" placeholder="Contoh: Ahmad Fauzi, S.T." required autocomplete="off">
+                </div>
+            </div>
+            
+            <button class="btn btn-green" onclick="mulaiUjian()" style="width: 100%; font-size: 1.2rem; padding: 15px; border-radius: 10px;">
+                <i class="fa-solid fa-rocket"></i> Mulai Ujian Sekarang
+            </button>
+        </div>
+
+        <div id="exam-section" class="exam-container animated-box" style="display: none;">
+            <div class="exam-header-bar">
+                <h3 id="displayNama" style="color: var(--primary-blue);"><i class='fa-solid fa-user-graduate'></i> Nama Peserta</h3>
+                <div id="timerDisplay" class="timer-box"><i class="fa-regular fa-hourglass-half"></i> 15:00</div>
+            </div>
+            
+            <form id="formUjian">
+                <div id="tempatSoal">
+                    <div style="text-align: center; padding: 3rem;">
+                        <i class="fa-solid fa-spinner fa-spin icon-large"></i>
+                        <p>Memuat butir soal peraturan...</p>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-green" onclick="kumpulkanUjian()" style="width: 100%; margin-top: 2rem; padding: 15px; font-size: 1.1rem; border-radius: 8px;">
+                    <i class="fa-solid fa-paper-plane"></i> Kumpulkan & Lihat Hasil
+                </button>
+            </form>
+        </div>
+
+        <div id="result-section" class="exam-container animated-box" style="display: none;">
+            <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;"><i class="fa-solid fa-square-poll-vertical"></i> Hasil Uji Kompetensi</h2>
+            
+            <div id="kartuHasil" class="result-card">
+                <i id="ikonHasil" class="fa-solid fa-award" style="font-size: 4rem;"></i>
+                <div class="score-display" id="skorAkhir">0</div>
+                <h3 id="pesanLulus" style="margin-bottom: 10px;"></h3>
+                <p>Data ujian Anda telah berhasil disimpan ke dalam Riwayat Dashboard.</p>
+            </div>
+            
+            <h3 style="border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1.5rem; margin-top: 3rem;">
+                <i class="fa-solid fa-magnifying-glass-chart"></i> Review Jawaban Salah:
+            </h3>
+            
+            <div id="tempatEvaluasi"></div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html" class="btn btn-primary" style="padding: 12px 25px; font-size: 1.1rem;">
+                    <i class="fa-solid fa-house-chimney"></i> Kembali ke Dashboard
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let dataSoal = [];
+        let waktuTersisa = 15 * 60; 
+        let timerInterval;
+
+        function mulaiUjian() {
+            const nama = document.getElementById("namaPeserta").value;
+            if (nama.trim() === "") {
+                alert("Mohon masukkan nama lengkap Anda terlebih dahulu.");
+                document.getElementById("namaPeserta").focus();
+                return;
+            }
+
+            document.getElementById("pre-exam-section").style.display = "none";
+            document.getElementById("exam-section").style.display = "block";
+            document.getElementById("displayNama").innerHTML = "<i class='fa-solid fa-user-graduate'></i> " + nama;
+
+            // Fetch soal khusus peraturan
+            fetch('../assets/js/soal-peraturan.json')
+                .then(response => response.json())
+                .then(data => {
+                    dataSoal = data;
+                    tampilkanSoal(dataSoal);
+                    jalankanTimer();
+                })
+                .catch(error => {
+                    document.getElementById("tempatSoal").innerHTML = "<p style='color:red;'>Gagal memuat soal. Pastikan file JSON tersedia.</p>";
+                });
+        }
+
+        function tampilkanSoal(soalArray) {
+            const tempatSoal = document.getElementById("tempatSoal");
+            tempatSoal.innerHTML = ""; 
+
+            soalArray.forEach((soal, index) => {
+                let htmlPilihan = "";
+                soal.pilihan.forEach(pilihan => {
+                    const nilaiPilihan = pilihan.charAt(0); 
+                    htmlPilihan += `
+                        <label class="option-label">
+                            <input type="radio" name="soal_${soal.id}" value="${nilaiPilihan}"> 
+                            <span>${pilihan}</span>
+                        </label>`;
+                });
+
+                tempatSoal.innerHTML += `
+                    <div class="question-box">
+                        <h4><span style="color: #27AE60; font-weight: 800;">${index + 1}.</span> ${soal.pertanyaan}</h4>
+                        <div class="options-container">${htmlPilihan}</div>
+                    </div>`;
+            });
+        }
+
+        function jalankanTimer() {
+            const timerDisplay = document.getElementById("timerDisplay");
+            timerInterval = setInterval(() => {
+                waktuTersisa--;
+                let menit = Math.floor(waktuTersisa / 60);
+                let detik = waktuTersisa % 60;
+                timerDisplay.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> ${menit}:${detik < 10 ? '0'+detik : detik}`;
+
+                if(waktuTersisa <= 180) timerDisplay.classList.add("timer-danger");
+                if (waktuTersisa <= 0) {
+                    clearInterval(timerInterval);
+                    kumpulkanUjian(true); 
+                }
+            }, 1000);
+        }
+
+        function kumpulkanUjian(isTimeOut = false) {
+            if (!isTimeOut) {
+                let belumDijawab = [];
+                dataSoal.forEach((s, i) => {
+                    if (!document.querySelector(`input[name="soal_${s.id}"]:checked`)) belumDijawab.push(i + 1);
+                });
+                if (belumDijawab.length > 0) {
+                    alert("Belum dijawab: " + belumDijawab.join(", "));
+                    return;
+                }
+                if (!confirm("Kumpulkan jawaban sekarang?")) return;
+            }
+
+            clearInterval(timerInterval);
+            let skor = 0;
+            let evaluasiHTML = "";
+            let salah = 0;
+
+            dataSoal.forEach((soal, index) => {
+                const terpilih = document.querySelector(`input[name="soal_${soal.id}"]:checked`);
+                const jawUser = terpilih ? terpilih.value : null;
+
+                if (jawUser === soal.jawaban_benar) {
+                    skor += 10;
+                } else {
+                    salah++;
+                    evaluasiHTML += `
+                        <div class="review-box">
+                            <h5><i class="fa-solid fa-circle-xmark" style="color: var(--danger);"></i> Soal No. ${index + 1}</h5>
+                            <p><strong>Pertanyaan:</strong> ${soal.pertanyaan}</p>
+                            <p style="color: var(--danger);"><strong>Jawaban Anda:</strong> ${jawUser || 'Kosong'}</p>
+                            <p style="color: var(--success);"><strong>Kunci Jawaban:</strong> ${soal.jawaban_benar}</p>
+                            <div style="background: #f8f9fa; padding: 10px; border-radius: 6px; font-size: 0.95rem; margin-top:10px;">
+                                <strong>💡 Pembahasan:</strong><br> ${soal.pembahasan}
+                            </div>
+                        </div>`;
+                }
+            });
+
+            document.getElementById("exam-section").style.display = "none";
+            document.getElementById("result-section").style.display = "block";
+            
+            const elemenSkor = document.getElementById("skorAkhir");
+            elemenSkor.innerText = skor;
+
+            if (skor >= 70) {
+                document.getElementById("kartuHasil").className = "result-card result-success";
+                document.getElementById("pesanLulus").innerText = "Selamat! Anda Lulus Uji Kompetensi Peraturan.";
+                document.getElementById("ikonHasil").className = "fa-solid fa-medal";
+            } else {
+                document.getElementById("kartuHasil").className = "result-card result-danger";
+                document.getElementById("pesanLulus").innerText = "Maaf, Skor Anda di bawah standar kelulusan (70).";
+                document.getElementById("ikonHasil").className = "fa-solid fa-circle-exclamation";
+            }
+
+            document.getElementById("tempatEvaluasi").innerHTML = evaluasiHTML || "<p style='text-align:center;'>Sempurna! Anda memahami semua peraturan dengan baik.</p>";
+
+            // Simpan Riwayat
+            const riwayat = JSON.parse(localStorage.getItem("riwayat_ujian")) || [];
+            riwayat.push({
+                tanggal: new Date().toLocaleString('id-ID'),
+                topik: "Peraturan Sektor Konstruksi",
+                nama: document.getElementById("namaPeserta").value,
+                skor: skor
+            });
+            localStorage.setItem("riwayat_ujian", JSON.stringify(riwayat));
+        }
+    </script>
+</body>
+</html>

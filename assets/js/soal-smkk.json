@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "pertanyaan": "Apa kepanjangan dari SMKK dalam pelaksanaan pekerjaan konstruksi di Indonesia?",
+        "pilihan": [
+            "A. Standar Mutu Keselamatan Konstruksi",
+            "B. Sistem Manajemen Keselamatan Konstruksi",
+            "C. Syarat Minimum Keselamatan Kerja",
+            "D. Sistem Manajemen Kesehatan Kerja"
+        ],
+        "jawaban_benar": "B",
+        "pembahasan": "SMKK singkatan dari Sistem Manajemen Keselamatan Konstruksi, yang merupakan bagian dari sistem manajemen pelaksanaan pekerjaan konstruksi untuk menjamin keselamatan, kesehatan, mutu, dan lingkungan."
+    },
+    {
+        "id": 2,
+        "pertanyaan": "Dokumen acuan utama yang disusun oleh Penyedia Jasa untuk merencanakan penerapan SMKK di lapangan adalah...",
+        "pilihan": [
+            "A. Rencana Anggaran Biaya (RAB)",
+            "B. Rencana Keselamatan Konstruksi (RKK)",
+            "C. Rencana Kerja dan Syarat-syarat (RKS)",
+            "D. Analisis Mengenai Dampak Lingkungan (AMDAL)"
+        ],
+        "jawaban_benar": "B",
+        "pembahasan": "Rencana Keselamatan Konstruksi (RKK) adalah dokumen lengkap rencana penerapan SMKK yang wajib disusun oleh penyedia jasa dan disetujui oleh pengguna jasa."
+    },
+    {
+        "id": 3,
+        "pertanyaan": "Selain keselamatan dan kesehatan tenaga kerja, elemen apa lagi yang menjadi fokus utama dalam SMKK?",
+        "pilihan": [
+            "A. Kecepatan proyek dan keuntungan",
+            "B. Mutu bangunan dan lingkungan",
+            "C. Estetika dan desain bangunan",
+            "D. Pemasaran dan penjualan properti"
+        ],
+        "jawaban_benar": "B",
+        "pembahasan": "Keselamatan Konstruksi mencakup K4, yaitu Standar Keamanan, Keselamatan, Kesehatan, dan Keberlanjutan (termasuk Mutu Bangunan dan pengelolaan Lingkungan)."
+    },
+    {
+        "id": 4,
+        "pertanyaan": "Sebelum pekerja memulai pekerjaan yang memiliki risiko tinggi (seperti bekerja di ketinggian), dokumen apa yang wajib disiapkan dan disetujui?",
+        "pilihan": [
+            "A. Surat Izin Mengemudi (SIM)",
+            "B. Izin Kerja (Work Permit)",
+            "C. Kartu Tanda Penduduk (KTP)",
+            "D. Sertifikat Badan Usaha (SBU)"
+        ],
+        "jawaban_benar": "B",
+        "pembahasan": "Work Permit (Izin Kerja) adalah dokumen wajib untuk memastikan semua bahaya telah diidentifikasi dan mitigasi telah disiapkan sebelum pekerjaan berisiko tinggi dimulai."
+    },
+    {
+        "id": 5,
+        "pertanyaan": "Jika terjadi kecelakaan kerja berat di lokasi proyek, tindakan pertama yang paling tepat dilakukan oleh seorang Supervisor K3 Utama adalah...",
+        "pilihan": [
+            "A. Mengamankan lokasi (barikade), memberikan pertolongan pertama, dan melapor ke pimpinan",
+            "B. Langsung membagikan foto kejadian ke grup WhatsApp agar semua tahu",
+            "C. Menghentikan seluruh proyek selamanya",
+            "D. Menyembunyikan korban agar tidak merusak reputasi perusahaan"
+        ],
+        "jawaban_benar": "A",
+        "pembahasan": "Langkah pertama dalam keadaan darurat adalah mengamankan area agar tidak ada korban tambahan, menyelamatkan korban, dan segera melaporkan kejadian sesuai prosedur tanggap darurat."
+    },
+    {
+        "id": 6,
+        "pertanyaan": "Apa warna dominan pada rambu K3 yang berfungsi untuk memberikan 'Peringatan/Waspada' terhadap potensi bahaya?",
+        "pilihan": [
+            "A. Merah",
+            "B. Biru",
+            "C. Hijau",
+            "D. Kuning"
+        ],
+        "jawaban_benar": "D",
+        "pembahasan": "Rambu berwarna kuning dengan simbol hitam digunakan sebagai tanda peringatan (Warning) akan adanya potensi bahaya di area tersebut."
+    },
+    {
+        "id": 7,
+        "pertanyaan": "Pengelolaan limbah B3 (Bahan Berbahaya dan Beracun) di proyek konstruksi merupakan implementasi dari elemen SMKK pada bagian...",
+        "pilihan": [
+            "A. Keselamatan Publik",
+            "B. Mutu Material",
+            "C. Keberlanjutan Lingkungan",
+            "D. Kesehatan Kerja"
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "Pengelolaan limbah B3 bertujuan untuk mencegah pencemaran tanah dan air, yang merupakan bentuk tanggung jawab terhadap Keberlanjutan Lingkungan."
+    },
+    {
+        "id": 8,
+        "pertanyaan": "Alat Pelindung Diri (APD) yang wajib digunakan oleh semua orang yang memasuki area proyek (Mandatory) umumnya terdiri dari...",
+        "pilihan": [
+            "A. Helm keselamatan, sepatu safety, dan rompi reflektif",
+            "B. Kacamata las, sabuk pengaman, dan sarung tangan karet",
+            "C. Masker gas, pelindung telinga, dan jaket tebal",
+            "D. Topi kain, sepatu kets, dan kemeja lengan panjang"
+        ],
+        "jawaban_benar": "A",
+        "pembahasan": "Helm keselamatan (Safety Helmet), sepatu pelindung (Safety Shoes), dan rompi reflektif (Safety Vest) adalah APD dasar yang wajib dipakai oleh siapa saja yang memasuki area kerja proyek."
+    },
+    {
+        "id": 9,
+        "pertanyaan": "Metode yang digunakan untuk mengidentifikasi bahaya, menilai risiko, dan menetapkan pengendaliannya sebelum pekerjaan dimulai disebut...",
+        "pilihan": [
+            "A. Job Safety Analysis (JSA) / IBPRP",
+            "B. Bill of Quantities (BoQ)",
+            "C. Kurva S",
+            "D. As-Built Drawing"
+        ],
+        "jawaban_benar": "A",
+        "pembahasan": "JSA atau Identifikasi Bahaya, Penilaian Risiko, dan Peluang (IBPRP) adalah alat utama manajemen risiko K3 untuk menganalisis setiap langkah pekerjaan."
+    },
+    {
+        "id": 10,
+        "pertanyaan": "Tujuan dilakukannya Tool Box Meeting (TBM) atau Safety Morning Briefing setiap pagi sebelum mulai bekerja adalah...",
+        "pilihan": [
+            "A. Menghitung upah pekerja harian",
+            "B. Membagikan jadwal cuti pekerja",
+            "C. Mengingatkan pekerja tentang potensi bahaya hari itu dan cara aman bekerja",
+            "D. Menilai hasil pekerjaan fisik hari sebelumnya"
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "TBM adalah komunikasi harian K3 untuk menyamakan persepsi, mengingatkan prosedur kerja aman, dan memastikan kesiapan fisik/mental pekerja sebelum memulai aktivitas."
+    }
+]

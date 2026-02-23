@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "pertanyaan": "Dalam konsep dasar K3, apa perbedaan utama antara 'Bahaya' (Hazard) dan 'Risiko' (Risk)?",
+        "pilihan": [
+            "A. Bahaya adalah akibat kecelakaan, Risiko adalah penyebabnya.",
+            "B. Bahaya adalah sumber yang berpotensi mencederai, Risiko adalah kombinasi kemungkinan dan keparahan dari cedera tersebut.",
+            "C. Bahaya hanya ada di proyek besar, Risiko ada di semua proyek.",
+            "D. Keduanya adalah hal yang sama dan bisa dipertukarkan penggunaannya."
+        ],
+        "jawaban_benar": "B",
+        "pembahasan": "Bahaya adalah kondisi atau benda yang berpotensi menyebabkan kerugian (misal: kabel terkelupas). Risiko adalah peluang seberapa mungkin kabel itu tersetrum seseorang dan seberapa parah dampaknya."
+    },
+    {
+        "id": 2,
+        "pertanyaan": "Berdasarkan Hierarki Pengendalian Risiko, langkah manakah yang dianggap paling efektif dan harus diupayakan pertama kali?",
+        "pilihan": [
+            "A. Penggunaan Alat Pelindung Diri (APD)",
+            "B. Pengendalian Administratif (Membuat SOP)",
+            "C. Rekayasa Teknik (Engineering Control)",
+            "D. Eliminasi (Menghilangkan bahaya sepenuhnya)"
+        ],
+        "jawaban_benar": "D",
+        "pembahasan": "Eliminasi berada di puncak hierarki (paling efektif) karena jika sumber bahaya dihilangkan secara total, maka tidak akan ada risiko kecelakaan sama sekali."
+    },
+    {
+        "id": 3,
+        "pertanyaan": "Jika eliminasi dan substitusi tidak memungkinkan untuk dilakukan, tingkat pengendalian apa yang tepat dilakukan selanjutnya menurut hierarki?",
+        "pilihan": [
+            "A. Langsung memberikan APD kepada pekerja",
+            "B. Memberikan denda kepada pekerja",
+            "C. Pengendalian Rekayasa Teknik (Engineering Control)",
+            "D. Menghentikan proyek secara permanen"
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "Setelah Eliminasi dan Substitusi, urutan ketiga adalah Rekayasa Teknik (Engineering Control), seperti memasang peredam suara atau memasang pagar pengaman, untuk memisahkan pekerja dari bahaya."
+    },
+    {
+        "id": 4,
+        "pertanyaan": "Apa kepanjangan dari JSA dalam manajemen risiko operasional harian di proyek konstruksi?",
+        "pilihan": [
+            "A. Job Safety Analysis",
+            "B. Joint Security Agreement",
+            "C. Just Safety Action",
+            "D. Job Standard Assessment"
+        ],
+        "jawaban_benar": "A",
+        "pembahasan": "JSA (Job Safety Analysis) adalah teknik manajemen keselamatan yang fokus pada identifikasi bahaya dan pengendalian risiko pada tugas/pekerjaan yang spesifik."
+    },
+    {
+        "id": 5,
+        "pertanyaan": "Tindakan memasang rambu peringatan, merotasi jam kerja pekerja agar tidak kelelahan, dan memberikan pelatihan K3 termasuk ke dalam jenis pengendalian...",
+        "pilihan": [
+            "A. Eliminasi",
+            "B. Substitusi",
+            "C. Administratif",
+            "D. Alat Pelindung Diri (APD)"
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "Pengendalian Administratif berkaitan dengan perubahan cara orang bekerja, seperti membuat aturan (SOP), jadwal rotasi, rambu-rambu, dan pelatihan (Training)."
+    },
+    {
+        "id": 6,
+        "pertanyaan": "Saat melakukan penilaian risiko menggunakan Matriks Risiko, dua faktor utama apa yang dikalikan untuk mendapatkan Tingkat Risiko?",
+        "pilihan": [
+            "A. Waktu (Time) x Biaya (Cost)",
+            "B. Kemungkinan (Probability) x Keparahan (Severity/Consequence)",
+            "C. Cuaca (Weather) x Jumlah Pekerja (Manpower)",
+            "D. Jarak (Distance) x Kecepatan (Speed)"
+        ],
+        "jawaban_benar": "B",
+        "pembahasan": "Tingkat Risiko dihitung dengan mengalikan seberapa sering insiden itu bisa terjadi (Probability/Likelihood) dengan seberapa parah dampak yang akan ditimbulkan jika terjadi (Severity/Consequence)."
+    },
+    {
+        "id": 7,
+        "pertanyaan": "Jika hasil penilaian matriks menunjukkan suatu pekerjaan memiliki 'Risiko Ekstrim/Sangat Tinggi' (Warna Merah), tindakan apa yang paling tepat dilakukan Supervisor?",
+        "pilihan": [
+            "A. Pekerjaan harus dihentikan segera dan tidak boleh dilanjutkan sampai tingkat risiko diturunkan",
+            "B. Pekerjaan tetap dilanjutkan asalkan pekerja memakai APD lengkap",
+            "C. Melaporkan ke polisi agar proyek ditutup",
+            "D. Melanjutkan pekerjaan dengan sangat hati-hati dan diawasi"
+        ],
+        "jawaban_benar": "A",
+        "pembahasan": "Risiko Ekstrim (High Risk) berarti pekerjaan tersebut sangat tidak aman. Pekerjaan WAJIB dihentikan (Stop Work Authority) sampai pengendalian tambahan diterapkan dan risiko turun ke tingkat yang bisa diterima."
+    },
+    {
+        "id": 8,
+        "pertanyaan": "Mengapa Alat Pelindung Diri (APD) ditempatkan pada posisi paling bawah (terakhir) dalam Hierarki Pengendalian Risiko?",
+        "pilihan": [
+            "A. Karena harganya paling mahal di antara metode lain",
+            "B. Karena APD paling sulit dicari di pasaran",
+            "C. Karena APD tidak menghilangkan bahaya, melainkan hanya mengurangi keparahan cedera jika kecelakaan benar-benar terjadi",
+            "D. Karena pekerja sering lupa memakainya"
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "APD adalah pertahanan terakhir (last resort). Jika material jatuh dari atas, APD (helm) tidak mencegah material itu jatuh, ia hanya mencegah kepala terluka parah. Bahayanya tetap ada."
+    },
+    {
+        "id": 9,
+        "pertanyaan": "Siapa yang paling ideal untuk dilibatkan dalam penyusunan JSA untuk sebuah pekerjaan perancah (scaffolding)?",
+        "pilihan": [
+            "A. Hanya Direktur Perusahaan",
+            "B. Hanya Petugas K3 (Safety Officer) di ruangan kantor",
+            "C. Petugas K3 bersama dengan Supervisor dan pekerja ahli perancah (scaffolder) yang akan melakukan pekerjaan",
+            "D. Mandor dari sub-kontraktor lain"
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "JSA harus dibuat secara partisipatif. Pekerja yang melakukan tugas tersebut adalah orang yang paling tahu seluk-beluk dan langkah-langkah detail pekerjaannya, sehingga mereka wajib dilibatkan."
+    },
+    {
+        "id": 10,
+        "pertanyaan": "Dokumen yang memuat identifikasi bahaya, penilaian risiko, dan penetapan pengendalian secara komprehensif untuk seluruh area proyek dari awal hingga akhir disebut...",
+        "pilihan": [
+            "A. Rencana Anggaran Biaya (RAB)",
+            "B. IBPRP (Identifikasi Bahaya, Penilaian Risiko, dan Peluang)",
+            "C. Analisis Mengenai Dampak Lingkungan (AMDAL)",
+            "D. Surat Perintah Kerja (SPK)"
+        ],
+        "jawaban_benar": "B",
+        "pembahasan": "IBPRP (dulu sering disebut HIRADC) adalah tulang punggung SMKK yang memetakan seluruh risiko proyek sebelum pekerjaan dimulai, yang menjadi acuan pembuatan JSA harian."
+    }
+]

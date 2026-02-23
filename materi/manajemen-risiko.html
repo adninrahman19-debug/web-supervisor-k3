@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Manajemen Risiko | Supervisor K3 Utama</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <style>
+        .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 6px; background: #e0e0e0; z-index: 1001; }
+        .progress-bar { height: 100%; background: var(--accent-yellow); width: 0%; box-shadow: 0 0 10px rgba(241, 196, 15, 0.5); }
+        
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-up { animation: fadeUp 0.8s ease-out forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        .article-wrapper { max-width: 900px; margin: 3rem auto; }
+        .article-header { background: linear-gradient(135deg, #E67E22, #D35400); color: white; padding: 4rem 3rem; border-radius: 20px; text-align: center; margin-bottom: 3rem; box-shadow: 0 10px 20px rgba(211, 84, 0, 0.15); }
+        .article-header i { font-size: 4rem; color: #F1C40F; margin-bottom: 1rem; }
+        .article-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 800; }
+        
+        .article-content { background: white; padding: 4rem; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
+        .article-content h2 { color: #D35400; font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 15px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+        .article-content h2 i { color: #E67E22; }
+        .article-content p { font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 1.5rem; }
+        
+        .callout-box { background: #FEF9E7; border-left: 6px solid var(--accent-yellow); padding: 2rem; border-radius: 8px; margin: 2rem 0; }
+        .callout-box h4 { color: #D4AC0D; font-size: 1.2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+        
+        .elemen-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .elemen-card { background: #f8f9fa; border: 1px solid #eee; padding: 2rem; border-radius: 12px; text-align: center; transition: all 0.3s; }
+        .elemen-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); background: white; border-color: #E67E22; }
+        .elemen-card i { font-size: 2.5rem; color: #E67E22; margin-bottom: 1rem; }
+        .elemen-card h4 { color: var(--text-dark); margin-bottom: 1rem; font-size: 1.1rem; }
+        .elemen-card p { font-size: 0.9rem; line-height: 1.6; margin-bottom: 0; }
+
+        .img-container { text-align: center; margin: 2.5rem 0; padding: 1.5rem; background: #fdfdfd; border: 1px dashed #ccc; border-radius: 12px; transition: transform 0.3s; }
+        .img-container:hover { transform: scale(1.02); border-color: #E67E22; }
+        .img-container img { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .img-container span { color: #888; font-style: italic; font-size: 0.95rem; display: block; margin-top: 10px; }
+
+        .finish-section { margin-top: 4rem; padding: 3rem; background: #FFF3E0; border-radius: 16px; text-align: center; border: 2px dashed #E67E22; }
+        .finish-section h3 { color: #D35400; margin-bottom: 1rem; font-size: 1.5rem; }
+        .finish-section p { color: #555; margin-bottom: 2rem; }
+        
+        /* Tombol Orange Khusus Risiko */
+        .btn-orange { background-color: #E67E22; color: white; }
+        .btn-orange:hover { background-color: #D35400; color: white; transform: scale(1.02); }
+    </style>
+</head>
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="readingProgressBar"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-helmet-safety"></i>
+                <span>Portal K3 Utama</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Kembali ke Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="article-wrapper">
+            
+            <div class="article-header animate-up">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <h1>Manajemen Risiko Proyek Konstruksi</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Identifikasi, Penilaian, dan Mitigasi Bahaya Lapangan</p>
+            </div>
+
+            <article class="article-content animate-up delay-1">
+                
+                <h2><i class="fa-solid fa-eye"></i> 1. Konsep Dasar Manajemen Risiko</h2>
+                <p>Proyek konstruksi adalah salah satu sektor dengan tingkat risiko kecelakaan tertinggi. <strong>Manajemen Risiko</strong> adalah proses sistematis untuk mengidentifikasi bahaya, menilai tingkat risiko, dan menetapkan langkah-langkah pengendalian sebelum insiden terjadi.</p>
+                <p>Rumus dasar risiko adalah: <strong>Risiko = Konsekuensi (Keparahan) × Kemungkinan (Probabilitas)</strong>.</p>
+
+                <div class="img-container">
+                    
+                    <span>Ilustrasi: Matriks Penilaian Risiko (Risk Assessment Matrix)</span>
+                </div>
+
+                <h2><i class="fa-solid fa-list-check"></i> 2. Siklus Manajemen Risiko</h2>
+                <p>Sebagai Supervisor, Anda akan memimpin pembuatan <strong>IBPRP</strong> (Identifikasi Bahaya, Penilaian Risiko, dan Peluang) melalui 4 tahapan ini:</p>
+
+                <div class="elemen-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                    <div class="elemen-card">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <h4>1. Identifikasi</h4>
+                        <p>Mencari tahu apa saja yang bisa memicu celaka (contoh: kabel terkelupas, tanah labil).</p>
+                    </div>
+                    <div class="elemen-card">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <h4>2. Penilaian</h4>
+                        <p>Mengukur seberapa parah dampaknya dan seberapa sering itu bisa terjadi.</p>
+                    </div>
+                    <div class="elemen-card">
+                        <i class="fa-solid fa-shield-cat"></i>
+                        <h4>3. Pengendalian</h4>
+                        <p>Menentukan tindakan pencegahan (contoh: memasang pagar pengaman).</p>
+                    </div>
+                    <div class="elemen-card">
+                        <i class="fa-solid fa-rotate"></i>
+                        <h4>4. Pemantauan</h4>
+                        <p>Mengevaluasi apakah tindakan pencegahan tersebut efektif saat proyek berjalan.</p>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <h4><i class="fa-solid fa-file-signature"></i> Job Safety Analysis (JSA)</h4>
+                    <p style="margin: 0; font-size: 1.05rem;">Selain IBPRP yang bersifat umum untuk seluruh proyek, pekerjaan berisiko tinggi wajib memiliki <strong>JSA</strong>. JSA membedah setiap langkah spesifik dari sebuah pekerjaan (misal: pengelasan di atas perancah) untuk menemukan bahaya tersembunyi di tiap detiknya.</p>
+                </div>
+
+                <h2><i class="fa-solid fa-layer-group"></i> 3. Hierarki Pengendalian Risiko</h2>
+                <p>Ini adalah pedoman paling penting dalam K3. Jika Anda menemukan bahaya, Anda <strong>wajib</strong> mengendalikannya secara berurutan dari atas ke bawah. Anda <strong>tidak boleh</strong> langsung melompat mengandalkan APD sebelum mencoba tahap di atasnya.</p>
+
+                <div class="img-container" style="background: transparent; border: none;">
+                    
+                    <span>Ilustrasi: Piramida Terbalik Hierarki Pengendalian Risiko (NIOSH)</span>
+                </div>
+
+                <ul style="margin-left: 2rem; margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">
+                    <li><strong>1. Eliminasi (Paling Efektif):</strong> Menghilangkan bahaya sepenuhnya. (Mengerjakan di bawah sebelum diangkat).</li>
+                    <li><strong>2. Substitusi:</strong> Mengganti bahan berbahaya dengan yang lebih aman. (Mengganti cat solvent dengan cat water-based).</li>
+                    <li><strong>3. Rekayasa Teknik (Engineering Control):</strong> Memisahkan pekerja dari bahaya. (Memasang pagar pelindung pada mesin potong).</li>
+                    <li><strong>4. Administratif:</strong> Mengubah cara kerja orang. (Rotasi shift, memasang rambu, training TBM).</li>
+                    <li><strong>5. APD (Paling Kurang Efektif):</strong> Melindungi pekerja dengan perlengkapan. (Helm, sepatu, harness). Ini adalah <em>last resort</em> / pertahanan terakhir!</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-person-falling-burst"></i> 4. Kesiapsiagaan Tanggap Darurat</h2>
+                <p>Meskipun risiko telah ditekan seminimal mungkin, keadaan darurat tetap bisa terjadi. Supervisor K3 wajib memastikan ketersediaan:</p>
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 1.5rem;">
+                    <div style="background: #fdfdfd; padding: 15px 20px; border-left: 4px solid #E74C3C; border-radius: 6px;">
+                        <strong>Jalur Evakuasi & Assembly Point:</strong> Rute penyelamatan yang bebas hambatan dan titik kumpul yang aman.
+                    </div>
+                    <div style="background: #fdfdfd; padding: 15px 20px; border-left: 4px solid #E74C3C; border-radius: 6px;">
+                        <strong>Fasilitas P3K & APAR:</strong> Tersedia di setiap area kerja dan pekerjanya sudah dilatih cara penggunaannya.
+                    </div>
+                </div>
+
+            </article>
+
+            <div class="finish-section animate-up delay-3">
+                <i class="fa-solid fa-clipboard-check" style="font-size: 3rem; color: #D35400; margin-bottom: 1rem;"></i>
+                <h3>Sudah Paham Matriks dan Hierarki Risiko?</h3>
+                <p>Klik tombol di bawah ini untuk mencatat progres Anda dan membuka akses Uji Kompetensi Manajemen Risiko.</p>
+                
+                <button class="btn btn-orange btn" id="btn-selesai-baca" onclick="tandaiSelesai('risiko')" style="padding: 15px 30px; font-size: 1.1rem; border-radius: 50px; border: none; font-weight: bold; cursor: pointer; box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);">
+                    <i class="fa-solid fa-unlock-keyhole"></i> Tandai Selesai & Buka Ujian Risiko
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../assets/js/script.js"></script>
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("readingProgressBar").style.width = scrolled + "%";
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Sertifikasi Supervisor K3 Utama</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-helmet-safety"></i>
+                <span>Portal K3 Utama</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="#materi-section">Materi</a></li>
+                <li><a href="#riwayat-section">Riwayat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang, Calon Supervisor K3 Utama</h1>
+            <p>Tingkatkan kompetensi Anda melalui modul interaktif dan uji kompetensi terpadu. Selesaikan materi untuk membuka akses ujian.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="materi-section" class="section-header">
+            <h2>Modul Pembelajaran & Ujian</h2>
+            <p>Silakan pilih materi di bawah ini. Anda harus membaca materi hingga selesai untuk membuka kunci tes uji kompetensi.</p>
+        </section>
+
+        <div class="card-grid">
+            <div class="topic-card">
+                <div class="card-icon blue-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Sistem Manajemen Keselamatan Konstruksi (SMKK)</h3>
+                <p>Pelajari K3, Mutu, dan Lingkungan dalam proyek konstruksi.</p>
+                <div class="card-actions">
+                    <a href="materi/smkk.html" class="btn btn-primary">Baca Materi</a>
+                    <button class="btn btn-disabled" id="btn-ujian-smkk" disabled>
+                        <i class="fa-solid fa-lock"></i> Ujian Terkunci
+                    </button>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="card-icon yellow-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h3>Manajemen Risiko Proyek Konstruksi</h3>
+                <p>Identifikasi, evaluasi, dan mitigasi risiko pada proyek.</p>
+                <div class="card-actions">
+                    <a href="materi/manajemen-risiko.html" class="btn btn-primary">Baca Materi</a>
+                    <button class="btn btn-disabled" id="btn-ujian-risiko" disabled>
+                        <i class="fa-solid fa-lock"></i> Ujian Terkunci
+                    </button>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="card-icon green-icon"><i class="fa-solid fa-gavel"></i></div>
+                <h3>Peraturan Sektor Jasa Konstruksi</h3>
+                <p>Pahami landasan hukum dan regulasi yang berlaku.</p>
+                <div class="card-actions">
+                    <a href="materi/peraturan.html" class="btn btn-primary">Baca Materi</a>
+                    <button class="btn btn-disabled" id="btn-ujian-peraturan" disabled>
+                        <i class="fa-solid fa-lock"></i> Ujian Terkunci
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <section id="riwayat-section" class="section-header" style="margin-top: 5rem;">
+            <h2><i class="fa-solid fa-clock-rotate-left"></i> Riwayat Uji Kompetensi</h2>
+            <p>Daftar hasil ujian yang telah Anda selesaikan.</p>
+            
+            <div class="history-container">
+                <div style="overflow-x: auto;">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Tanggal & Waktu</th>
+                                <th>Topik Ujian</th>
+                                <th>Nama Peserta</th>
+                                <th>Skor</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tempatRiwayat">
+                            <tr>
+                                <td colspan="6" style="text-align: center; padding: 2rem;">Belum ada riwayat ujian.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn btn-danger" id="btn-hapus-semua" style="display: none; margin-top: 1rem;" onclick="hapusSemuaRiwayat()">
+                    <i class="fa-solid fa-trash-can"></i> Hapus Semua Riwayat
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
