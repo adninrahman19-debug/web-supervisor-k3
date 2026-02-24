@@ -14,21 +14,22 @@ function tandaiSelesai(materiId) {
     // Simpan status ke localStorage
     localStorage.setItem('materi_' + materiId, 'selesai');
     
-    // Notifikasi Manis dengan SweetAlert2 (Hanya jalan jika SweetAlert2 di-load di HTML)
+    // Notifikasi Manis dengan SweetAlert2
     if (typeof Swal !== 'undefined') {
         Swal.fire({
             title: 'Luar Biasa!',
-            text: 'Anda telah menyelesaikan materi ini. Akses Ujian telah dibuka.',
+            html: 'Anda telah menyelesaikan materi ini.<br><b>Gembok Ujian telah terbuka!</b>',
             icon: 'success',
-            confirmButtonText: 'Kembali ke Dashboard',
-            confirmButtonColor: '#27AE60'
+            confirmButtonText: '<i class="fa-solid fa-rocket"></i> Menuju Dashboard',
+            confirmButtonColor: '#27AE60',
+            allowOutsideClick: false // Mencegah user klik sembarangan di luar kotak
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href = "../index.html";
             }
         });
     } else {
-        // Fallback (cadangan) jika SweetAlert gagal dimuat
+        // Fallback jika internet mati / SweetAlert gagal dimuat
         alert("Hebat! Anda telah menyelesaikan materi ini. Akses Ujian telah dibuka.");
         window.location.href = "../index.html";
     }
