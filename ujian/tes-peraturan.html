@@ -7,6 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="../assets/css/style.css">
     
     <style>
@@ -30,7 +31,7 @@
         
         /* Header Pre-Exam */
         .pre-exam-header { text-align: center; margin-bottom: 2rem; }
-        .icon-large { font-size: 4rem; color: #27AE60; margin-bottom: 1rem; } 
+        .icon-large { font-size: 4rem; color: #27AE60; margin-bottom: 1rem; } /* Warna Hijau Kepatuhan */
         
         /* Input Form */
         .form-group { margin-bottom: 2rem; }
@@ -72,7 +73,8 @@
         .review-box { background: var(--white); border: 1px solid #ddd; padding: 1.5rem; margin-top: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         .review-box h5 { color: #27AE60; font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem; }
         
-        .btn-green { background-color: #27AE60; color: white; border: none; cursor: pointer; transition: all 0.3s; }
+        /* Tombol Hijau Khusus Peraturan */
+        .btn-green { background-color: #27AE60; color: white; border: none; cursor: pointer; }
         .btn-green:hover { background-color: #1E8449; transform: scale(1.02); }
     </style>
 </head>
@@ -91,20 +93,21 @@
     </nav>
 
     <main class="container">
+        
         <div id="pre-exam-section" class="exam-container animated-box">
             <div class="pre-exam-header">
                 <i class="fa-solid fa-scale-balanced icon-large"></i>
                 <h2 style="color: var(--primary-blue);">Uji Kompetensi: Peraturan Konstruksi</h2>
-                <p style="color: var(--text-muted);">Kepatuhan Hukum & Standar K4</p>
+                <p style="color: var(--text-muted);">Landasan Hukum, Kepatuhan, dan Standar K4</p>
             </div>
             
             <div class="eval-box">
                 <h4><i class="fa-solid fa-circle-info"></i> Panduan & Instruksi:</h4>
                 <ul>
-                    <li>Materi mencakup UU No. 2 Tahun 2017 & Permen PUPR No. 10/2021.</li>
+                    <li>Soal mencakup UU No. 2 Tahun 2017 & Permen PUPR No. 10/2021.</li>
                     <li>Terdapat <strong>10 soal</strong> pilihan ganda.</li>
-                    <li>Waktu pengerjaan adalah <strong>15 Menit</strong> secara otomatis.</li>
-                    <li>Hasil ujian akan disimpan secara permanen di riwayat Anda.</li>
+                    <li>Waktu pengerjaan adalah <strong>15 Menit</strong>, berjalan otomatis.</li>
+                    <li>Jika waktu habis, jawaban akan dikumpulkan secara otomatis.</li>
                 </ul>
             </div>
             
@@ -112,7 +115,7 @@
                 <label for="namaPeserta">Masukkan Nama Lengkap Anda:</label>
                 <div class="input-with-icon">
                     <i class="fa-solid fa-user-pen"></i>
-                    <input type="text" id="namaPeserta" placeholder="Contoh: Ahmad Fauzi, S.T." required autocomplete="off">
+                    <input type="text" id="namaPeserta" placeholder="Contoh: Budi Santoso, S.T." required autocomplete="off">
                 </div>
             </div>
             
@@ -131,7 +134,7 @@
                 <div id="tempatSoal">
                     <div style="text-align: center; padding: 3rem;">
                         <i class="fa-solid fa-spinner fa-spin icon-large"></i>
-                        <p>Memuat butir soal peraturan...</p>
+                        <p>Menyiapkan soal ujian Anda...</p>
                     </div>
                 </div>
                 
@@ -167,22 +170,30 @@
 
     <script>
         let dataSoal = [];
-        let waktuTersisa = 15 * 60; 
+        let waktuTersisa = 15 * 60; // 15 Menit
         let timerInterval;
 
         function mulaiUjian() {
             const nama = document.getElementById("namaPeserta").value;
             if (nama.trim() === "") {
-                alert("Mohon masukkan nama lengkap Anda terlebih dahulu.");
+                alert("Mohon masukkan nama lengkap Anda terlebih dahulu agar hasil ujian dapat disimpan.");
                 document.getElementById("namaPeserta").focus();
                 return;
             }
 
-            document.getElementById("pre-exam-section").style.display = "none";
-            document.getElementById("exam-section").style.display = "block";
+            const preSection = document.getElementById("pre-exam-section");
+            const examSection = document.getElementById("exam-section");
+            
+            preSection.style.display = "none";
+            examSection.style.display = "block";
+            
+            examSection.classList.remove("animated-box");
+            void examSection.offsetWidth; 
+            examSection.classList.add("animated-box");
+
             document.getElementById("displayNama").innerHTML = "<i class='fa-solid fa-user-graduate'></i> " + nama;
 
-            // Fetch soal khusus peraturan
+            // AMBIL DATA DARI SOAL-PERATURAN.JSON
             fetch('../assets/js/soal-peraturan.json')
                 .then(response => response.json())
                 .then(data => {
@@ -191,7 +202,12 @@
                     jalankanTimer();
                 })
                 .catch(error => {
-                    document.getElementById("tempatSoal").innerHTML = "<p style='color:red;'>Gagal memuat soal. Pastikan file JSON tersedia.</p>";
+                    document.getElementById("tempatSoal").innerHTML = `
+                        <div style='text-align:center; color: var(--danger); padding: 2rem;'>
+                            <i class='fa-solid fa-triangle-exclamation icon-large' style='color:var(--danger);'></i>
+                            <h3>Gagal Memuat Soal</h3>
+                            <p>Pastikan Anda membuka file ini menggunakan aplikasi Web Server (seperti Live Server di VS Code).</p>
+                        </div>`;
                 });
         }
 
@@ -207,14 +223,19 @@
                         <label class="option-label">
                             <input type="radio" name="soal_${soal.id}" value="${nilaiPilihan}"> 
                             <span>${pilihan}</span>
-                        </label>`;
+                        </label>
+                    `;
                 });
 
-                tempatSoal.innerHTML += `
-                    <div class="question-box">
+                const htmlSoal = `
+                    <div class="question-box" id="qbox_${soal.id}">
                         <h4><span style="color: #27AE60; font-weight: 800;">${index + 1}.</span> ${soal.pertanyaan}</h4>
-                        <div class="options-container">${htmlPilihan}</div>
-                    </div>`;
+                        <div class="options-container">
+                            ${htmlPilihan}
+                        </div>
+                    </div>
+                `;
+                tempatSoal.innerHTML += htmlSoal;
             });
         }
 
@@ -222,13 +243,22 @@
             const timerDisplay = document.getElementById("timerDisplay");
             timerInterval = setInterval(() => {
                 waktuTersisa--;
+                
                 let menit = Math.floor(waktuTersisa / 60);
                 let detik = waktuTersisa % 60;
-                timerDisplay.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> ${menit}:${detik < 10 ? '0'+detik : detik}`;
+                
+                if(menit < 10) menit = "0" + menit;
+                if(detik < 10) detik = "0" + detik;
+                
+                timerDisplay.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> ${menit}:${detik}`;
 
-                if(waktuTersisa <= 180) timerDisplay.classList.add("timer-danger");
+                if(waktuTersisa <= 180 && !timerDisplay.classList.contains("timer-danger")) {
+                    timerDisplay.classList.add("timer-danger");
+                }
+
                 if (waktuTersisa <= 0) {
                     clearInterval(timerInterval);
+                    alert("⏰ Waktu Ujian Telah Habis! Sistem akan mengumpulkan jawaban Anda secara otomatis.");
                     kumpulkanUjian(true); 
                 }
             }, 1000);
@@ -236,70 +266,111 @@
 
         function kumpulkanUjian(isTimeOut = false) {
             if (!isTimeOut) {
-                let belumDijawab = [];
-                dataSoal.forEach((s, i) => {
-                    if (!document.querySelector(`input[name="soal_${s.id}"]:checked`)) belumDijawab.push(i + 1);
+                let soalKosong = [];
+                dataSoal.forEach((soal, index) => {
+                    const cekJawaban = document.querySelector(`input[name="soal_${soal.id}"]:checked`);
+                    if (!cekJawaban) soalKosong.push(index + 1);
                 });
-                if (belumDijawab.length > 0) {
-                    alert("Belum dijawab: " + belumDijawab.join(", "));
-                    return;
+
+                if (soalKosong.length > 0) {
+                    alert(`⚠️ Anda belum menjawab soal nomor:\n${soalKosong.join(', ')}\n\nHarap lengkapi seluruh jawaban sebelum mengumpulkan.`);
+                    return; 
                 }
-                if (!confirm("Kumpulkan jawaban sekarang?")) return;
+                
+                if (!confirm("Apakah Anda yakin telah selesai dan ingin mengumpulkan jawaban?")) return;
             }
 
-            clearInterval(timerInterval);
+            clearInterval(timerInterval); 
+            
             let skor = 0;
             let evaluasiHTML = "";
-            let salah = 0;
+            let jumlahSalah = 0;
 
             dataSoal.forEach((soal, index) => {
-                const terpilih = document.querySelector(`input[name="soal_${soal.id}"]:checked`);
-                const jawUser = terpilih ? terpilih.value : null;
+                const elemenJawaban = document.querySelector(`input[name="soal_${soal.id}"]:checked`);
+                const jawabanPeserta = elemenJawaban ? elemenJawaban.value : null;
 
-                if (jawUser === soal.jawaban_benar) {
-                    skor += 10;
+                if (jawabanPeserta === soal.jawaban_benar) {
+                    skor += 10; 
                 } else {
-                    salah++;
+                    jumlahSalah++;
+                    const teksJawabanPeserta = jawabanPeserta ? `Pilihan ${jawabanPeserta}` : "Tidak Dijawab (Kosong)";
+                    
                     evaluasiHTML += `
                         <div class="review-box">
                             <h5><i class="fa-solid fa-circle-xmark" style="color: var(--danger);"></i> Soal No. ${index + 1}</h5>
-                            <p><strong>Pertanyaan:</strong> ${soal.pertanyaan}</p>
-                            <p style="color: var(--danger);"><strong>Jawaban Anda:</strong> ${jawUser || 'Kosong'}</p>
-                            <p style="color: var(--success);"><strong>Kunci Jawaban:</strong> ${soal.jawaban_benar}</p>
-                            <div style="background: #f8f9fa; padding: 10px; border-radius: 6px; font-size: 0.95rem; margin-top:10px;">
+                            <p style="margin-bottom: 10px;"><strong>Pertanyaan:</strong> ${soal.pertanyaan}</p>
+                            <p style="color: var(--danger); margin-bottom: 5px;"><i class="fa-solid fa-xmark"></i> <strong>Jawaban Anda:</strong> ${teksJawabanPeserta}</p>
+                            <p style="color: var(--success); margin-bottom: 10px;"><i class="fa-solid fa-check"></i> <strong>Kunci Jawaban:</strong> Pilihan ${soal.jawaban_benar}</p>
+                            <div style="background: #f8f9fa; padding: 10px; border-radius: 6px; font-size: 0.95rem;">
                                 <strong>💡 Pembahasan:</strong><br> ${soal.pembahasan}
                             </div>
-                        </div>`;
+                        </div>
+                    `;
                 }
             });
 
             document.getElementById("exam-section").style.display = "none";
-            document.getElementById("result-section").style.display = "block";
+            const resultSection = document.getElementById("result-section");
+            resultSection.style.display = "block";
             
+            resultSection.classList.remove("animated-box");
+            void resultSection.offsetWidth; 
+            resultSection.classList.add("animated-box");
+
             const elemenSkor = document.getElementById("skorAkhir");
+            const pesanLulus = document.getElementById("pesanLulus");
+            const kartuHasil = document.getElementById("kartuHasil");
+            const ikonHasil = document.getElementById("ikonHasil");
+            
             elemenSkor.innerText = skor;
 
             if (skor >= 70) {
-                document.getElementById("kartuHasil").className = "result-card result-success";
-                document.getElementById("pesanLulus").innerText = "Selamat! Anda Lulus Uji Kompetensi Peraturan.";
-                document.getElementById("ikonHasil").className = "fa-solid fa-medal";
+                kartuHasil.className = "result-card result-success";
+                elemenSkor.style.color = "var(--success)";
+                ikonHasil.className = "fa-solid fa-medal";
+                ikonHasil.style.color = "var(--success)";
+                pesanLulus.innerHTML = "Selamat! Anda Lulus Uji Kompetensi Peraturan.";
+                pesanLulus.style.color = "var(--success)";
             } else {
-                document.getElementById("kartuHasil").className = "result-card result-danger";
-                document.getElementById("pesanLulus").innerText = "Maaf, Skor Anda di bawah standar kelulusan (70).";
-                document.getElementById("ikonHasil").className = "fa-solid fa-circle-exclamation";
+                kartuHasil.className = "result-card result-danger";
+                elemenSkor.style.color = "var(--danger)";
+                ikonHasil.className = "fa-solid fa-circle-exclamation";
+                ikonHasil.style.color = "var(--danger)";
+                pesanLulus.innerHTML = "Maaf, Anda belum memenuhi standar kelulusan (Min 70).";
+                pesanLulus.style.color = "var(--danger)";
             }
 
-            document.getElementById("tempatEvaluasi").innerHTML = evaluasiHTML || "<p style='text-align:center;'>Sempurna! Anda memahami semua peraturan dengan baik.</p>";
-
-            // Simpan Riwayat
-            const riwayat = JSON.parse(localStorage.getItem("riwayat_ujian")) || [];
-            riwayat.push({
-                tanggal: new Date().toLocaleString('id-ID'),
-                topik: "Peraturan Sektor Konstruksi",
-                nama: document.getElementById("namaPeserta").value,
-                skor: skor
+            const tempatEvaluasi = document.getElementById("tempatEvaluasi");
+            if (jumlahSalah === 0) {
+                tempatEvaluasi.innerHTML = `
+                    <div style='text-align:center; padding: 2rem; background: #E8F8F5; border-radius: 8px; color: var(--success);'>
+                        <i class="fa-solid fa-star icon-large" style="color: var(--success);"></i>
+                        <h3>Luar Biasa Sempurna!</h3>
+                        <p>Semua jawaban Anda benar. Tidak ada catatan evaluasi.</p>
+                    </div>`;
+            } else {
+                tempatEvaluasi.innerHTML = evaluasiHTML;
+            }
+            
+            // SIMPAN DATA KE RIWAYAT DASHBOARD
+            const namaPeserta = document.getElementById("namaPeserta").value;
+            const waktuSekarang = new Date();
+            const formatTanggal = waktuSekarang.toLocaleDateString('id-ID', { 
+                day: 'numeric', month: 'long', year: 'numeric', 
+                hour: '2-digit', minute:'2-digit' 
             });
-            localStorage.setItem("riwayat_ujian", JSON.stringify(riwayat));
+
+            const dataRiwayatBaru = {
+                tanggal: formatTanggal,
+                topik: "Peraturan Sektor Jasa Konstruksi", // Nama Topik
+                nama: namaPeserta,
+                skor: skor
+            };
+
+            let riwayatTersimpan = JSON.parse(localStorage.getItem("riwayat_ujian")) || [];
+            riwayatTersimpan.push(dataRiwayatBaru);
+            localStorage.setItem("riwayat_ujian", JSON.stringify(riwayatTersimpan));
         }
     </script>
 </body>
