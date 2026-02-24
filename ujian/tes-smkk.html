@@ -16,24 +16,12 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
         .animated-box { animation: fadeIn 0.6s ease-out forwards; }
         
-        /* Desain Kotak Ujian */
-        .exam-container { 
-            max-width: 850px; 
-            margin: 2rem auto; 
-            background: var(--white); 
-            padding: 3rem; 
-            border-radius: 16px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-        }
-        
-        /* Header Pre-Exam */
+        .exam-container { max-width: 850px; margin: 2rem auto; background: var(--white); padding: 3rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
         .pre-exam-header { text-align: center; margin-bottom: 2rem; }
         .icon-large { font-size: 4rem; color: var(--primary-blue); margin-bottom: 1rem; }
         
-        /* Input Form */
         .form-group { margin-bottom: 2rem; }
         .form-group label { display: block; margin-bottom: 0.8rem; font-weight: 600; color: var(--primary-blue); font-size: 1.1rem; }
         .input-with-icon { position: relative; }
@@ -41,35 +29,29 @@
         .input-with-icon input { width: 100%; padding: 15px 15px 15px 45px; border: 2px solid #eee; border-radius: 8px; font-size: 1.1rem; font-family: 'Poppins', sans-serif; transition: border-color 0.3s; }
         .input-with-icon input:focus { outline: none; border-color: var(--secondary-blue); }
         
-        /* Box Instruksi */
         .eval-box { background: #FEF9E7; border-left: 5px solid var(--accent-yellow); padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px; }
         .eval-box h4 { color: #D4AC0D; margin-bottom: 0.8rem; font-size: 1.2rem; }
         .eval-box ul { margin-left: 1.5rem; line-height: 1.8; color: #555; }
         
-        /* Desain Ruang Ujian */
         .exam-header-bar { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px dashed #ddd; padding-bottom: 1.5rem; margin-bottom: 2rem; }
         .timer-box { background: var(--primary-blue); color: var(--white); padding: 10px 25px; border-radius: 30px; font-weight: bold; font-size: 1.3rem; box-shadow: 0 4px 10px rgba(10, 61, 98, 0.2); transition: all 0.3s; }
         .timer-danger { background: var(--danger); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); animation: pulse 1s infinite; }
         
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
         
-        /* Kotak Soal */
         .question-box { margin-bottom: 2.5rem; padding: 1.5rem; background: #fafafa; border-radius: 12px; border-left: 4px solid var(--secondary-blue); transition: all 0.3s; }
         .question-box:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.05); background: var(--white); transform: translateY(-3px); }
         .question-box h4 { margin-bottom: 1.5rem; color: var(--text-dark); font-size: 1.15rem; line-height: 1.6; }
         
-        /* Pilihan Jawaban */
         .option-label { display: flex; align-items: center; margin-bottom: 0.8rem; cursor: pointer; padding: 12px 15px; border: 2px solid #eee; border-radius: 8px; transition: all 0.2s; background: var(--white); }
         .option-label:hover { border-color: var(--secondary-blue); background: #f4f9fc; }
         .option-label input { margin-right: 15px; transform: scale(1.2); cursor: pointer; }
         
-        /* Hasil Ujian */
         .result-card { text-align: center; padding: 2rem; border-radius: 16px; margin-bottom: 2rem; }
         .result-success { background: #E8F8F5; border: 2px solid var(--success); }
         .result-danger { background: #FDEDEC; border: 2px solid var(--danger); }
         .score-display { font-size: 4.5rem; font-weight: 800; line-height: 1; margin: 1rem 0; }
         
-        /* Pembahasan */
         .review-box { background: var(--white); border: 1px solid #ddd; padding: 1.5rem; margin-top: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         .review-box h5 { color: var(--primary-blue); font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem; }
     </style>
@@ -154,8 +136,7 @@
                 <i class="fa-solid fa-magnifying-glass-chart"></i> Review Jawaban Salah:
             </h3>
             
-            <div id="tempatEvaluasi">
-                </div>
+            <div id="tempatEvaluasi"></div>
             
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="../index.html" class="btn btn-primary" style="padding: 12px 25px; font-size: 1.1rem;">
@@ -165,35 +146,38 @@
         </div>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         let dataSoal = [];
-        let waktuTersisa = 15 * 60; // 15 Menit
+        let waktuTersisa = 15 * 60; 
         let timerInterval;
 
-        // 1. Fungsi Mulai Ujian
         function mulaiUjian() {
             const nama = document.getElementById("namaPeserta").value;
             if (nama.trim() === "") {
-                alert("Mohon masukkan nama lengkap Anda terlebih dahulu agar hasil ujian dapat disimpan.");
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Tunggu Dulu!',
+                    text: 'Mohon masukkan nama lengkap Anda terlebih dahulu agar hasil ujian dapat disimpan.',
+                    confirmButtonColor: '#0A3D62'
+                });
                 document.getElementById("namaPeserta").focus();
                 return;
             }
 
-            // Ganti Tampilan dengan animasi ulang
             const preSection = document.getElementById("pre-exam-section");
             const examSection = document.getElementById("exam-section");
             
             preSection.style.display = "none";
             examSection.style.display = "block";
             
-            // Re-trigger animasi fadeIn
             examSection.classList.remove("animated-box");
-            void examSection.offsetWidth; // trigger reflow
+            void examSection.offsetWidth; 
             examSection.classList.add("animated-box");
 
             document.getElementById("displayNama").innerHTML = "<i class='fa-solid fa-user-graduate'></i> " + nama;
 
-            // Ambil Soal
             fetch('../assets/js/soal-smkk.json')
                 .then(response => response.json())
                 .then(data => {
@@ -206,12 +190,11 @@
                         <div style='text-align:center; color: var(--danger); padding: 2rem;'>
                             <i class='fa-solid fa-triangle-exclamation icon-large'></i>
                             <h3>Gagal Memuat Soal</h3>
-                            <p>Pastikan Anda membuka file ini menggunakan aplikasi Web Server (seperti Live Server di VS Code) dan bukan file:///</p>
+                            <p>Pastikan Anda membuka file ini menggunakan aplikasi Web Server (seperti Live Server di VS Code).</p>
                         </div>`;
                 });
         }
 
-        // 2. Fungsi Menampilkan Soal ke HTML
         function tampilkanSoal(soalArray) {
             const tempatSoal = document.getElementById("tempatSoal");
             tempatSoal.innerHTML = ""; 
@@ -240,7 +223,6 @@
             });
         }
 
-        // 3. Fungsi Timer Berjalan
         function jalankanTimer() {
             const timerDisplay = document.getElementById("timerDisplay");
             timerInterval = setInterval(() => {
@@ -254,23 +236,27 @@
                 
                 timerDisplay.innerHTML = `<i class="fa-solid fa-hourglass-half"></i> ${menit}:${detik}`;
 
-                // Efek bahaya saat sisa 3 menit (180 detik)
                 if(waktuTersisa <= 180 && !timerDisplay.classList.contains("timer-danger")) {
                     timerDisplay.classList.add("timer-danger");
                 }
 
                 if (waktuTersisa <= 0) {
                     clearInterval(timerInterval);
-                    alert("⏰ Waktu Ujian Telah Habis! Sistem akan mengumpulkan jawaban Anda secara otomatis.");
-                    kumpulkanUjian(true); 
+                    Swal.fire({
+                        title: 'Waktu Habis!',
+                        text: 'Sistem sedang mengumpulkan jawaban Anda secara otomatis.',
+                        icon: 'info',
+                        timer: 2500,
+                        showConfirmButton: false
+                    }).then(() => {
+                        kumpulkanUjian(true); 
+                    });
                 }
             }, 1000);
         }
 
-        // 4. Fungsi Utama: Evaluasi & Simpan ke Riwayat Dashboard
+        // Fungsi awal saat tombol Kumpulkan diklik
         function kumpulkanUjian(isTimeOut = false) {
-            
-            // Validasi soal kosong jika tidak timeout
             if (!isTimeOut) {
                 let soalKosong = [];
                 dataSoal.forEach((soal, index) => {
@@ -279,20 +265,44 @@
                 });
 
                 if (soalKosong.length > 0) {
-                    alert(`⚠️ Anda belum menjawab soal nomor:\n${soalKosong.join(', ')}\n\nHarap lengkapi seluruh jawaban sebelum mengumpulkan.`);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ada yang Terlewat!',
+                        text: `Anda belum menjawab soal nomor: ${soalKosong.join(', ')}. Harap lengkapi seluruh jawaban sebelum mengumpulkan.`,
+                        confirmButtonColor: '#0A3D62'
+                    });
                     return; 
                 }
                 
-                if (!confirm("Apakah Anda yakin telah selesai dan ingin mengumpulkan jawaban?")) return;
+                // Konfirmasi dengan SweetAlert2
+                Swal.fire({
+                    title: 'Sudah Yakin?',
+                    text: "Apakah Anda yakin telah selesai dan ingin mengumpulkan jawaban?",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#27AE60',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, Kumpulkan!',
+                    cancelButtonText: 'Cek Kembali'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        prosesPengumpulan();
+                    }
+                });
+            } else {
+                // Jika Timeout, langsung proses tanpa konfirmasi
+                prosesPengumpulan();
             }
+        }
 
+        // Fungsi terpisah untuk menghitung dan menampilkan skor
+        function prosesPengumpulan() {
             clearInterval(timerInterval); 
             
             let skor = 0;
             let evaluasiHTML = "";
             let jumlahSalah = 0;
 
-            // Hitung Skor dan buat Evaluasi
             dataSoal.forEach((soal, index) => {
                 const elemenJawaban = document.querySelector(`input[name="soal_${soal.id}"]:checked`);
                 const jawabanPeserta = elemenJawaban ? elemenJawaban.value : null;
@@ -317,17 +327,14 @@
                 }
             });
 
-            // Ganti Tampilan ke Hasil Ujian
             document.getElementById("exam-section").style.display = "none";
             const resultSection = document.getElementById("result-section");
             resultSection.style.display = "block";
             
-            // Terapkan animasi
             resultSection.classList.remove("animated-box");
             void resultSection.offsetWidth; 
             resultSection.classList.add("animated-box");
 
-            // Desain Kartu Kelulusan
             const elemenSkor = document.getElementById("skorAkhir");
             const pesanLulus = document.getElementById("pesanLulus");
             const kartuHasil = document.getElementById("kartuHasil");
@@ -342,6 +349,9 @@
                 ikonHasil.style.color = "var(--success)";
                 pesanLulus.innerHTML = "Selamat! Anda Lulus Uji Kompetensi SMKK.";
                 pesanLulus.style.color = "var(--success)";
+                
+                // Tambahan letupan kembang api sederhana jika lulus (opsional tapi bagus)
+                Swal.fire({ title: 'Lulus!', text: 'Selamat, nilai Anda memenuhi standar!', icon: 'success', confirmButtonColor: '#27AE60'});
             } else {
                 kartuHasil.className = "result-card result-danger";
                 elemenSkor.style.color = "var(--danger)";
@@ -349,9 +359,10 @@
                 ikonHasil.style.color = "var(--danger)";
                 pesanLulus.innerHTML = "Maaf, Anda belum memenuhi standar kelulusan (Min 70).";
                 pesanLulus.style.color = "var(--danger)";
+                
+                Swal.fire({ title: 'Belum Lulus', text: 'Jangan menyerah, pelajari evaluasinya dan coba lagi nanti.', icon: 'error', confirmButtonColor: '#0A3D62'});
             }
 
-            // Tampilkan Review Pembahasan
             const tempatEvaluasi = document.getElementById("tempatEvaluasi");
             if (jumlahSalah === 0) {
                 tempatEvaluasi.innerHTML = `
@@ -364,21 +375,14 @@
                 tempatEvaluasi.innerHTML = evaluasiHTML;
             }
             
-            /* ========================================================
-               FITUR BARU: SIMPAN DATA KE RIWAYAT DASHBOARD (LOCALSTORAGE)
-               ======================================================== */
-            
-            // 1. Ambil Nama yang diketik di awal
+            // SIMPAN DATA KE RIWAYAT DASHBOARD
             const namaPeserta = document.getElementById("namaPeserta").value;
-            
-            // 2. Buat format tanggal hari ini (Contoh: "24 Februari 2026, 14:30")
             const waktuSekarang = new Date();
             const formatTanggal = waktuSekarang.toLocaleDateString('id-ID', { 
                 day: 'numeric', month: 'long', year: 'numeric', 
                 hour: '2-digit', minute:'2-digit' 
             });
 
-            // 3. Susun data menjadi sebuah Objek
             const dataRiwayatBaru = {
                 tanggal: formatTanggal,
                 topik: "SMKK (Keselamatan Konstruksi)",
@@ -386,13 +390,8 @@
                 skor: skor
             };
 
-            // 4. Ambil array riwayat yang sudah ada di localStorage, atau buat array kosong jika belum ada
             let riwayatTersimpan = JSON.parse(localStorage.getItem("riwayat_ujian")) || [];
-            
-            // 5. Masukkan data baru ke dalam array
             riwayatTersimpan.push(dataRiwayatBaru);
-            
-            // 6. Simpan kembali array yang sudah diperbarui ke dalam localStorage
             localStorage.setItem("riwayat_ujian", JSON.stringify(riwayatTersimpan));
         }
     </script>
