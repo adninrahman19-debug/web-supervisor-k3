@@ -16,24 +16,12 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
         .animated-box { animation: fadeIn 0.6s ease-out forwards; }
         
-        /* Desain Kotak Ujian */
-        .exam-container { 
-            max-width: 850px; 
-            margin: 2rem auto; 
-            background: var(--white); 
-            padding: 3rem; 
-            border-radius: 16px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-        }
-        
-        /* Header Pre-Exam */
+        .exam-container { max-width: 850px; margin: 2rem auto; background: var(--white); padding: 3rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
         .pre-exam-header { text-align: center; margin-bottom: 2rem; }
         .icon-large { font-size: 4rem; color: #27AE60; margin-bottom: 1rem; } /* Warna Hijau Kepatuhan */
         
-        /* Input Form */
         .form-group { margin-bottom: 2rem; }
         .form-group label { display: block; margin-bottom: 0.8rem; font-weight: 600; color: var(--primary-blue); font-size: 1.1rem; }
         .input-with-icon { position: relative; }
@@ -41,39 +29,32 @@
         .input-with-icon input { width: 100%; padding: 15px 15px 15px 45px; border: 2px solid #eee; border-radius: 8px; font-size: 1.1rem; font-family: 'Poppins', sans-serif; transition: border-color 0.3s; }
         .input-with-icon input:focus { outline: none; border-color: #27AE60; }
         
-        /* Box Instruksi */
         .eval-box { background: #EAFAF1; border-left: 5px solid #27AE60; padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px; }
         .eval-box h4 { color: #1E8449; margin-bottom: 0.8rem; font-size: 1.2rem; }
         .eval-box ul { margin-left: 1.5rem; line-height: 1.8; color: #555; }
         
-        /* Desain Ruang Ujian */
         .exam-header-bar { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px dashed #ddd; padding-bottom: 1.5rem; margin-bottom: 2rem; }
         .timer-box { background: #27AE60; color: var(--white); padding: 10px 25px; border-radius: 30px; font-weight: bold; font-size: 1.3rem; box-shadow: 0 4px 10px rgba(39, 174, 96, 0.2); transition: all 0.3s; }
         .timer-danger { background: var(--danger); box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); animation: pulse 1s infinite; }
         
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
         
-        /* Kotak Soal */
         .question-box { margin-bottom: 2.5rem; padding: 1.5rem; background: #fafafa; border-radius: 12px; border-left: 4px solid #27AE60; transition: all 0.3s; }
         .question-box:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.05); background: var(--white); transform: translateY(-3px); }
         .question-box h4 { margin-bottom: 1.5rem; color: var(--text-dark); font-size: 1.15rem; line-height: 1.6; }
         
-        /* Pilihan Jawaban */
         .option-label { display: flex; align-items: center; margin-bottom: 0.8rem; cursor: pointer; padding: 12px 15px; border: 2px solid #eee; border-radius: 8px; transition: all 0.2s; background: var(--white); }
         .option-label:hover { border-color: #27AE60; background: #EAFAF1; }
         .option-label input { margin-right: 15px; transform: scale(1.2); cursor: pointer; }
         
-        /* Hasil Ujian */
         .result-card { text-align: center; padding: 2rem; border-radius: 16px; margin-bottom: 2rem; }
         .result-success { background: #E8F8F5; border: 2px solid var(--success); }
         .result-danger { background: #FDEDEC; border: 2px solid var(--danger); }
         .score-display { font-size: 4.5rem; font-weight: 800; line-height: 1; margin: 1rem 0; }
         
-        /* Pembahasan */
         .review-box { background: var(--white); border: 1px solid #ddd; padding: 1.5rem; margin-top: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         .review-box h5 { color: #27AE60; font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem; }
         
-        /* Tombol Hijau Khusus Peraturan */
         .btn-green { background-color: #27AE60; color: white; border: none; cursor: pointer; }
         .btn-green:hover { background-color: #1E8449; transform: scale(1.02); }
     </style>
@@ -168,6 +149,8 @@
         </div>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         let dataSoal = [];
         let waktuTersisa = 15 * 60; // 15 Menit
@@ -176,7 +159,12 @@
         function mulaiUjian() {
             const nama = document.getElementById("namaPeserta").value;
             if (nama.trim() === "") {
-                alert("Mohon masukkan nama lengkap Anda terlebih dahulu agar hasil ujian dapat disimpan.");
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Tunggu Dulu!',
+                    text: 'Mohon masukkan nama lengkap Anda terlebih dahulu agar hasil ujian dapat disimpan.',
+                    confirmButtonColor: '#27AE60'
+                });
                 document.getElementById("namaPeserta").focus();
                 return;
             }
@@ -258,8 +246,15 @@
 
                 if (waktuTersisa <= 0) {
                     clearInterval(timerInterval);
-                    alert("⏰ Waktu Ujian Telah Habis! Sistem akan mengumpulkan jawaban Anda secara otomatis.");
-                    kumpulkanUjian(true); 
+                    Swal.fire({
+                        title: 'Waktu Habis!',
+                        text: 'Sistem sedang mengumpulkan jawaban Anda secara otomatis.',
+                        icon: 'info',
+                        timer: 2500,
+                        showConfirmButton: false
+                    }).then(() => {
+                        kumpulkanUjian(true); 
+                    });
                 }
             }, 1000);
         }
@@ -273,13 +268,35 @@
                 });
 
                 if (soalKosong.length > 0) {
-                    alert(`⚠️ Anda belum menjawab soal nomor:\n${soalKosong.join(', ')}\n\nHarap lengkapi seluruh jawaban sebelum mengumpulkan.`);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Ada yang Terlewat!',
+                        text: `Anda belum menjawab soal nomor: ${soalKosong.join(', ')}. Harap lengkapi seluruh jawaban sebelum mengumpulkan.`,
+                        confirmButtonColor: '#27AE60'
+                    });
                     return; 
                 }
                 
-                if (!confirm("Apakah Anda yakin telah selesai dan ingin mengumpulkan jawaban?")) return;
+                Swal.fire({
+                    title: 'Sudah Yakin?',
+                    text: "Apakah Anda yakin telah selesai dan ingin mengumpulkan jawaban?",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#27AE60',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, Kumpulkan!',
+                    cancelButtonText: 'Cek Kembali'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        prosesPengumpulan();
+                    }
+                });
+            } else {
+                prosesPengumpulan();
             }
+        }
 
+        function prosesPengumpulan() {
             clearInterval(timerInterval); 
             
             let skor = 0;
@@ -332,6 +349,8 @@
                 ikonHasil.style.color = "var(--success)";
                 pesanLulus.innerHTML = "Selamat! Anda Lulus Uji Kompetensi Peraturan.";
                 pesanLulus.style.color = "var(--success)";
+                
+                Swal.fire({ title: 'Lulus!', text: 'Selamat, nilai Anda memenuhi standar!', icon: 'success', confirmButtonColor: '#27AE60'});
             } else {
                 kartuHasil.className = "result-card result-danger";
                 elemenSkor.style.color = "var(--danger)";
@@ -339,6 +358,8 @@
                 ikonHasil.style.color = "var(--danger)";
                 pesanLulus.innerHTML = "Maaf, Anda belum memenuhi standar kelulusan (Min 70).";
                 pesanLulus.style.color = "var(--danger)";
+                
+                Swal.fire({ title: 'Belum Lulus', text: 'Jangan menyerah, pelajari evaluasinya dan coba lagi.', icon: 'error', confirmButtonColor: '#27AE60'});
             }
 
             const tempatEvaluasi = document.getElementById("tempatEvaluasi");
@@ -363,7 +384,7 @@
 
             const dataRiwayatBaru = {
                 tanggal: formatTanggal,
-                topik: "Peraturan Sektor Jasa Konstruksi", // Nama Topik
+                topik: "Peraturan Sektor Jasa Konstruksi",
                 nama: namaPeserta,
                 skor: skor
             };
