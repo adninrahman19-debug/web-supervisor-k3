@@ -99,7 +99,8 @@ body {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Membuat grid fleksibel, minimal lebar 280px agar tidak jebol di HP kecil */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -167,11 +168,10 @@ body {
 
 .btn-disabled { background-color: var(--disabled-bg); color: var(--disabled-text); cursor: not-allowed; }
 
-/* Tombol kecil untuk tabel */
 .btn-sm { padding: 6px 10px; font-size: 0.85rem; }
 
 /* =========================================
-   7. TABEL RIWAYAT UJIAN (FITUR BARU)
+   7. TABEL RIWAYAT UJIAN
    ========================================= */
 .history-container {
     background-color: var(--white);
@@ -183,7 +183,7 @@ body {
 .history-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 700px; /* Mencegah tabel terlalu sempit di layar kecil */
+    min-width: 600px; /* Lebar minimum untuk tabel agar bisa di-scroll di HP */
 }
 
 .history-table th, .history-table td {
@@ -192,33 +192,95 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-.history-table th {
-    background-color: #F8F9F9;
-    color: var(--primary-blue);
-    font-weight: 600;
-}
+.history-table th { background-color: #F8F9F9; color: var(--primary-blue); font-weight: 600; }
+.history-table tbody tr:hover { background-color: #F4F7F6; }
 
-.history-table tbody tr:hover {
-    background-color: #F4F7F6;
-}
-
-/* Badge untuk status kelulusan */
-.badge {
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    display: inline-block;
-}
-
+.badge { padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; }
 .badge-success { background-color: #E8F8F5; color: var(--success); }
 .badge-danger { background-color: #FDEDEC; color: var(--danger); }
 
+
 /* =========================================
-   8. RESPONSIF
+   8. MEDIA QUERIES (RESPONSIVE DESIGN)
    ========================================= */
+
+/* Untuk Layar Tablet (max-width: 992px) */
+@media screen and (max-width: 992px) {
+    .card-grid { gap: 1.5rem; }
+    .hero { padding: 3rem 2rem; }
+}
+
+/* Untuk Layar Mobile/Smartphone (max-width: 768px) */
 @media screen and (max-width: 768px) {
-    .nav-container { flex-direction: column; gap: 15px; }
-    .hero h1 { font-size: 2rem; }
+    /* Navbar HP */
+    .nav-container { flex-direction: column; gap: 15px; padding: 1rem; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+
+    /* Teks Hero mengecil */
+    .hero h1 { font-size: 1.8rem; }
+    .hero p { font-size: 0.95rem; }
+
+    /* Jarak Container mengecil */
+    .container { padding: 2rem 1rem; }
+    .section-header h2 { font-size: 1.6rem; }
+    .section-header p { font-size: 0.9rem; }
+
+    /* Tabel Riwayat padding disesuaikan */
     .history-container { padding: 1rem; }
+    .history-table th, .history-table td { padding: 10px; font-size: 0.9rem; }
+
+    /* ==============================================
+       OVERRIDE UNTUK HALAMAN MATERI & UJIAN
+       Memaksa padding besar mengecil di HP
+       ============================================== */
+    .exam-container, .article-content {
+        padding: 1.5rem !important;
+        margin: 1rem auto !important;
+    }
+    
+    .article-header {
+        padding: 2.5rem 1.5rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .article-header h1 { font-size: 1.6rem !important; }
+    .article-header i { font-size: 3rem !important; }
+
+    .article-content h2 { 
+        font-size: 1.3rem !important; 
+        flex-direction: column; /* Ikon dan Teks berbaris ke bawah */
+        align-items: flex-start !important;
+    }
+
+    /* Grid Elemen di Materi menjadi 1 kolom penuh di HP */
+    .elemen-grid { grid-template-columns: 1fr !important; }
+
+    .finish-section {
+        padding: 2rem 1rem !important;
+        margin-top: 2rem !important;
+    }
+
+    .finish-section h3 { font-size: 1.3rem !important; }
+
+    /* Penyesuaian Ruang Ujian */
+    .icon-large { font-size: 3rem !important; }
+    .score-display { font-size: 3.5rem !important; }
+    
+    .exam-header-bar {
+        flex-direction: column; /* Timer turun ke bawah nama peserta */
+        gap: 15px;
+        text-align: center;
+    }
+
+    .timer-box { font-size: 1.1rem !important; padding: 8px 15px !important; }
+}
+
+/* Untuk Layar HP Super Kecil (seperti iPhone SE / max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .card-grid { grid-template-columns: 1fr; } /* Paksa 1 kolom murni */
+    .hero h1 { font-size: 1.5rem; }
+    
+    /* Tombol jadi memanjang memenuhi layar HP */
+    .btn { display: block; width: 100%; padding: 12px; margin-bottom: 8px; }
+    .card-actions { flex-direction: column; }
 }
