@@ -7,12 +7,19 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="../assets/css/style.css">
     
     <style>
+        /* Progress Bar Membaca */
         .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 6px; background: #e0e0e0; z-index: 1001; }
         .progress-bar { height: 100%; background: var(--accent-yellow); width: 0%; box-shadow: 0 0 10px rgba(241, 196, 15, 0.5); }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Animasi Muncul Halus */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         .animate-up { animation: fadeUp 0.8s ease-out forwards; opacity: 0; }
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
@@ -21,12 +28,19 @@
 </head>
 <body>
 
-    <div class="progress-container"><div class="progress-bar" id="readingProgressBar"></div></div>
+    <div class="progress-container">
+        <div class="progress-bar" id="readingProgressBar"></div>
+    </div>
 
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"><i class="fa-solid fa-helmet-safety"></i><span>Portal K3 Utama</span></div>
-            <ul class="nav-links"><li><a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Kembali ke Dashboard</a></li></ul>
+            <div class="logo">
+                <i class="fa-solid fa-helmet-safety"></i>
+                <span>Portal K3 Utama</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Kembali ke Dashboard</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -36,87 +50,92 @@
             <div class="article-header animate-up">
                 <i class="fa-solid fa-shield-halved"></i>
                 <h1>Sistem Manajemen Keselamatan Konstruksi (SMKK)</h1>
-                <p style="font-size: 1.1rem; opacity: 0.9;">Berdasarkan Permen PUPR No. 10 Tahun 2021 & SKh-1.1.22 Menuju Zero Accident</p>
+                <p style="font-size: 1.1rem; opacity: 0.9;">Berdasarkan Permen PUPR No. 10/2021 & SKh-1.1.22 Menuju Zero Accident</p>
             </div>
 
             <article class="article-content animate-up delay-1">
                 
                 <h2><i class="fa-solid fa-book-open"></i> 1. Pengantar & Prinsip K4</h2>
-                <p><strong>SMKK</strong> adalah bagian dari sistem manajemen pelaksanaan Pekerjaan Konstruksi dalam rangka menjamin terwujudnya Keselamatan Konstruksi. Berdasarkan Permen PUPR No. 10/2021, penerapan SMKK mutlak harus memenuhi <strong>Standar K4</strong>, yaitu:</p>
+                [cite_start]<p><strong>Sistem Manajemen Keselamatan Konstruksi (SMKK)</strong> adalah bagian dari sistem manajemen pelaksanaan Pekerjaan Konstruksi untuk menjamin terwujudnya Keselamatan Konstruksi[cite: 665]. [cite_start]Sesuai dengan Permen PUPR No. 10 Tahun 2021, penerapan SMKK mutlak harus memenuhi <strong>Standar K4</strong>, yang menjamin hal-hal berikut[cite: 666, 677]:</p>
                 <ul>
-                    <li><strong>Keamanan:</strong> Menjamin keselamatan keteknikan konstruksi (bangunan, aset, peralatan, material).</li>
-                    <li><strong>Keselamatan & Kesehatan:</strong> Menjamin pekerja, pemilik, pemasok, tamu, dan masyarakat publik yang terpapar aman dari kecelakaan.</li>
-                    <li><strong>Keberlanjutan:</strong> Menjamin pelestarian lingkungan kerja, alam, dan lingkungan terbangun.</li>
+                    [cite_start]<li><strong>Keamanan (Keselamatan Keteknikan):</strong> Menjamin keselamatan aset konstruksi, bangunan, peralatan, dan material[cite: 677, 750, 754].</li>
+                    [cite_start]<li><strong>Keselamatan & Kesehatan:</strong> Menjamin pekerja, pemilik, pemasok, tamu, serta masyarakat publik dan masyarakat terpapar aman dari risiko celaka[cite: 677, 761, 763, 766].</li>
+                    [cite_start]<li><strong>Keberlanjutan (Lingkungan):</strong> Menjamin pelestarian tata lingkungan kerja, lingkungan terdampak proyek, alam, dan lingkungan terbangun[cite: 666, 773, 775, 778].</li>
                 </ul>
 
                 <div class="callout-box">
-                    <h4><i class="fa-solid fa-folder-tree"></i> Dokumen Implementasi SMKK</h4>
-                    <p>SMKK didokumentasikan dalam beberapa berkas wajib, meliputi: <strong>Rancangan Konseptual SMKK, RKK (Rencana Keselamatan Konstruksi), RMPK (Rencana Mutu), Program Mutu, RKPPL (Lingkungan), dan RMLLP (Manajemen Lalu Lintas)</strong>.</p>
+                    <h4><i class="fa-solid fa-folder-tree"></i> Dokumen Wajib SMKK</h4>
+                    [cite_start]<p>Penerapan SMKK dituangkan dalam rangkaian dokumen yang wajib disetujui, antara lain: <strong>Rancangan Konseptual SMKK, RKK (Rencana Keselamatan Konstruksi), RMPK (Rencana Mutu Pekerjaan Konstruksi), Program Mutu, RKPPL (Rencana Kerja Pengelolaan Lingkungan), dan RMLLP (Manajemen Lalu Lintas)</strong>[cite: 781, 782, 785, 788, 790, 791].</p>
                 </div>
 
-                <h2><i class="fa-solid fa-layer-group"></i> 2. Lima Elemen Utama SMKK</h2>
-                <p>Setiap RKK harus memuat 5 (lima) elemen SMKK yang berkesinambungan:</p>
+                <h2><i class="fa-solid fa-layer-group"></i> 2. Lima Elemen Utama RKK</h2>
+                [cite_start]<p>Setiap dokumen RKK harus memuat 5 (lima) elemen SMKK yang berkesinambungan[cite: 841]:</p>
+                
                 <div class="elemen-grid">
                     <div class="elemen-card">
                         <i class="fa-solid fa-users-gear"></i>
                         <h4>1. Kepemimpinan</h4>
-                        <p>Komitmen manajemen puncak, organisasi pengelola, dan partisipasi pekerja.</p>
+                        [cite_start]<p>Komitmen Keselamatan Konstruksi, partisipasi tenaga kerja, dan pembentukan organisasi pengelola SMKK[cite: 845, 872].</p>
                     </div>
                     <div class="elemen-card">
                         <i class="fa-solid fa-clipboard-check"></i>
                         <h4>2. Perencanaan</h4>
-                        <p>Pembuatan IBPRP, pemenuhan standar peraturan, serta sasaran dan program.</p>
+                        [cite_start]<p>Pembuatan IBPRP, pemenuhan standar dan peraturan, serta sasaran dan program[cite: 846, 887, 888].</p>
                     </div>
                     <div class="elemen-card">
                         <i class="fa-solid fa-hand-holding-hand"></i>
                         <h4>3. Dukungan</h4>
-                        <p>Ketersediaan sumber daya (biaya, alat), kompetensi kerja, dan komunikasi.</p>
+                        [cite_start]<p>Ketersediaan sumber daya (teknologi, material, biaya), kompetensi kerja, kepedulian, dan komunikasi[cite: 847, 894, 896].</p>
                     </div>
                     <div class="elemen-card">
                         <i class="fa-solid fa-helmet-safety"></i>
                         <h4>4. Operasi</h4>
-                        <p>Pengendalian pelaksanaan (AKK/JSA), kesiapan darurat, dan investigasi kecelakaan.</p>
+                        [cite_start]<p>Pengendalian operasi, perencanaan implementasi RKK, kesiapan kondisi darurat, dan investigasi kecelakaan[cite: 848, 919, 921].</p>
                     </div>
                     <div class="elemen-card">
                         <i class="fa-solid fa-magnifying-glass-chart"></i>
                         <h4>5. Evaluasi Kinerja</h4>
-                        <p>Pemantauan, inspeksi, audit internal, dan tinjauan manajemen untuk perbaikan.</p>
+                        [cite_start]<p>Pemantauan, inspeksi, audit internal, tinjauan manajemen, dan peningkatan kinerja K3[cite: 849, 929, 931, 935].</p>
                     </div>
                 </div>
 
                 <h2><i class="fa-solid fa-file-invoice-dollar"></i> 3. Sembilan (9) Komponen Biaya Penerapan SMKK</h2>
-                <p>Berdasarkan <strong>SKh-1.1.22 Tahun 2022</strong>, biaya penerapan SMKK bersifat non-competitive dan harus mencakup 9 rincian mutlak berikut:</p>
+                [cite_start]<p>Berdasarkan <strong>Spesifikasi Khusus SKh-1.1.22 Tahun 2022</strong>, biaya penerapan SMKK tidak boleh dikompetisikan (non-competitive) dan paling sedikit harus mencakup 9 rincian berikut[cite: 51, 176]:</p>
                 <ol>
-                    <li><strong>Penyiapan Dokumen:</strong> Pembuatan RKK, RMPK, RKPPL, RMLLP, prosedur, dan pelaporan.</li>
-                    <li><strong>Sosialisasi & Pelatihan:</strong> Safety induction, safety briefing, spanduk, pelatihan Bekerja di Ketinggian, dll.</li>
-                    <li><strong>APK & APD:</strong> Jaring pengaman, tali keselamatan, helm, sepatu pelindung, body harness.</li>
-                    <li><strong>Asuransi & Perizinan:</strong> Asuransi CAR, uji riksa peralatan/alat berat.</li>
-                    <li><strong>Personel:</strong> Ahli K3 Konstruksi, Petugas tanggap darurat, medis, dan pengatur lalu lintas.</li>
-                    <li><strong>Fasilitas Kesehatan:</strong> Peralatan P3K, ruang P3K, ambulans, dan protokol kesehatan/wabah.</li>
-                    <li><strong>Rambu & Manajemen Lalu Lintas:</strong> Rambu peringatan, kerucut (traffic cone), lampu darurat.</li>
-                    <li><strong>Konsultasi Ahli:</strong> Keterlibatan ahli terkait (Ahli Jembatan, Struktur, Peledakan, dll).</li>
-                    <li><strong>Pengendalian Risiko & Lingkungan:</strong> APAR, patroli keselamatan, CCTV, dan pengujian baku mutu air/udara.</li>
+                    [cite_start]<li><strong>Penyiapan Dokumen:</strong> Pembuatan RKK, RMPK, RKPPL, RMLLP, serta prosedur dan pelaporan[cite: 53, 185].</li>
+                    [cite_start]<li><strong>Sosialisasi & Pelatihan:</strong> Safety induction, safety briefing, spanduk, pelatihan Bekerja di Ketinggian, rambu, dll[cite: 55, 195, 201].</li>
+                    [cite_start]<li><strong>APK & APD:</strong> Jaring pengaman, tali keselamatan, helm, sepatu keselamatan (SNI), body harness, kacamata pelindung[cite: 57, 221, 237, 252].</li>
+                    [cite_start]<li><strong>Asuransi & Perizinan:</strong> Asuransi CAR (Construction All Risks) dan uji riksa kelayakan peralatan/alat berat[cite: 58, 265, 272].</li>
+                    [cite_start]<li><strong>Personel:</strong> Ahli K3 Konstruksi, petugas tanggap darurat, petugas medis, dan pengatur lalu lintas[cite: 61, 281, 284, 289].</li>
+                    [cite_start]<li><strong>Fasilitas Kesehatan:</strong> Peralatan dan Ruang P3K, ambulans, perlengkapan isolasi, dan protokol kesehatan wabah[cite: 62, 295, 314, 358, 361].</li>
+                    [cite_start]<li><strong>Rambu & Manajemen Lalu Lintas:</strong> Rambu petunjuk, peringatan lalu lintas, traffic cone, lampu putar, dan pembatas jalan[cite: 68, 367, 374, 386, 388].</li>
+                    [cite_start]<li><strong>Konsultasi Ahli:</strong> Keterlibatan ahli terkait seperti Ahli Struktur, Ahli Pondasi, Ahli Likuifaksi, dll[cite: 69, 411, 413, 417].</li>
+                    [cite_start]<li><strong>Pengendalian Risiko & Lingkungan:</strong> APAR, patroli K3, CCTV, serta biaya pengujian/pemeriksaan Baku Mutu Air Nasional dan Baku Mutu Udara Ambien secara berkala[cite: 70, 434, 435, 436].</li>
                 </ol>
 
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1541888086925-0c770f4e7d9b?auto=format&fit=crop&q=80&w=800" alt="Inspeksi Proyek" style="border-radius: 8px;">
-                    <span>Ilustrasi: Inspeksi Kepatuhan APD dan Pengendalian Lingkungan Lapangan</span>
+                                        <span>Ilustrasi: Inspeksi Kepatuhan APD dan Pengendalian Lingkungan Lapangan</span>
+                </div>
+
+                <div style="background: #fdfdfd; padding: 15px 20px; border-left: 4px solid var(--secondary-blue); border-radius: 6px; margin-bottom: 2rem;">
+                    <strong>Standar Warna Pelindung Kepala (Helm) Berdasarkan SKh-1.1.22:</strong><br>
+                    Tamu (Putih polos tulisan TAMU), Pelaksana (Putih 1 strip), Ka. Pelaksana (Putih 2 strip), Ka. [cite_start]Pekerjaan Konstruksi (Putih 3 strip + 1 strip atas), UKK (Merah), Pekerja Sipil (Kuning), Pekerja ME (Biru), Pekerja Lingkungan (Hijau)[cite: 493, 495, 496, 498, 500, 502, 504, 507].
                 </div>
 
                 <h2><i class="fa-solid fa-sitemap"></i> 4. Risiko Keselamatan & Unit Keselamatan Konstruksi (UKK)</h2>
-                <p>Penyedia Jasa wajib membentuk UKK yang terpisah dari struktur organisasi pelaksana (untuk risiko sedang dan besar). Rasio kebutuhan personel diatur sebagai berikut:</p>
+                [cite_start]<p>Penyedia Jasa wajib membentuk UKK yang bertanggung jawab langsung di bawah pimpinan tertinggi[cite: 1331, 1335]. [cite_start]Untuk risiko kecil, pimpinan UKK bisa dirangkap oleh Kepala Pelaksana, namun untuk risiko sedang dan besar, UKK harus terpisah dari struktur pelaksana[cite: 1349, 1350]. [cite_start]Kriteria rasio personel diatur secara ketat[cite: 85, 1291]:</p>
                 <ul>
-                    <li><strong>Risiko Kecil (HPS < 10 Miliar, Tenaga Kerja < 25 Orang):</strong> Rasio personel 1:60, minimal 1 Petugas Keselamatan Konstruksi.</li>
-                    <li><strong>Risiko Sedang (HPS 10-100 Miliar, Tenaga Kerja 25-100 Orang):</strong> Rasio personel 1:50, minimal 1 Ahli K3/Keselamatan Konstruksi Muda.</li>
-                    <li><strong>Risiko Besar (HPS > 100 Miliar, Tenaga Kerja > 100 Orang, ada Pesawat Angkat):</strong> Rasio personel 1:40. Wajib memiliki 1 Ahli Utama/Madya dan 1 Ahli Muda. Ditambah 1 Petugas untuk setiap kelipatan 40 orang pekerja.</li>
+                    [cite_start]<li><strong>Risiko Kecil (Nilai HPS ≤ Rp 10 Miliar, Tenaga Kerja < 25 Orang):</strong> Rasio personel 1:60, minimal 1 Petugas Keselamatan Konstruksi[cite: 1292, 1296, 1299, 1382].</li>
+                    [cite_start]<li><strong>Risiko Sedang (Nilai HPS Rp 10-100 Miliar, Tenaga Kerja 25-100 Orang):</strong> Rasio personel 1:50, minimal 1 Ahli K3/Keselamatan Konstruksi Muda[cite: 1302, 1308, 1311, 1383].</li>
+                    [cite_start]<li><strong>Risiko Besar (Nilai HPS > Rp 100 Miliar, Tenaga Kerja > 100 Orang, atau ada Pesawat Angkat/Peledakan):</strong> Rasio personel 1:40, minimal 1 Ahli K3 Muda dengan pengalaman 3 tahun[cite: 1316, 1322, 1323, 1324, 1387]. [cite_start]Jika tenaga kerja melebihi 100 orang, wajib memiliki tambahan 1 Ahli Utama/Madya, dan penambahan 1 Petugas K3 untuk setiap kelipatan 40 orang pekerja[cite: 1388, 1390, 1394].</li>
                 </ul>
 
                 <h2><i class="fa-solid fa-bullseye"></i> 5. Menuju Konstruksi "Zero Accident"</h2>
                 <p>Meski regulasi sudah ketat, penerapan SMKK di lapangan sering menghadapi tantangan, antara lain:</p>
                 <div style="background: #fdfdfd; padding: 15px 20px; border-left: 4px solid var(--danger); border-radius: 6px; margin-bottom:1.5rem;">
-                    <strong>Tantangan Implementasi:</strong> Minimnya pemahaman SDM teknis terhadap format baku Permen 10/2021, pengawasan yang belum optimal karena kurangnya <em>lead surveyor</em>, keengganan kontraktor mengalokasikan anggaran, serta minimnya sertifikasi petugas.
+                    <strong>Tantangan Implementasi:</strong> Minimnya pemahaman SDM teknis terhadap format baku Permen No. 10/2021, pengawasan yang belum optimal karena kurangnya <em>lead surveyor</em>, keengganan kontraktor mengalokasikan anggaran keselamatan, serta masih minimnya sertifikasi ahli/petugas K3.
                 </div>
-                <p>Untuk mengatasi ini, Direktorat Jenderal Bina Konstruksi menggiatkan <strong>Pemantauan dan Evaluasi (PE) SMKK</strong>. Melalui pengecekan ketat pada dokumen perencanaan, pengawasan, dan inspeksi langsung di lapangan, diharapkan terbangun budaya keselamatan yang tidak hanya melindungi nyawa, tetapi juga mempercepat produktivitas proyek menuju cita-cita <strong>Zero Accident</strong>.</p>
+                <p>Untuk mengatasi kendala tersebut, Direktorat Jenderal Bina Konstruksi terus menggiatkan <strong>Pemantauan dan Evaluasi (PE) SMKK</strong>. Melalui pengecekan ketat pada dokumen perencanaan, pengawasan berlapis, dan inspeksi mendadak di lapangan, diharapkan terbangun budaya keselamatan *berbasis perilaku* yang tidak hanya mampu melindungi nyawa pekerja, tetapi juga menjamin keandalan struktur bangunan, demi mencapai tujuan akhir yaitu <strong>Zero Accident</strong>.</p>
                 
             </article>
 
@@ -134,7 +153,9 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="../assets/js/script.js"></script>
+    
     <script>
         window.onscroll = function() {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
